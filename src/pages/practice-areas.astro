@@ -4,14 +4,14 @@ import ServiceCard from '../components/ServiceCard.astro';
 import Button from '../components/Button.astro';
 ---
 
-<MainLayout title="Bidang Hukum" activePage="practice-areas" description="Daftar bidang layanan hukum Basyir Legal Partners di Sumedang mencakup hukum korporasi, litigasi perdata dan pidana, HKI, restrukturisasi bisnis, dan ketenagakerjaan.">
+<MainLayout title="Bidang Hukum" activePage="practice-areas" description="Daftar bidang layanan hukum Basyir Legal Partners di Sumedang mencakup hukum korporasi, litigasi perdata dan pidana, HKI, restrukturisasi bisnis, ketenagakerjaan, dan Pengadilan Agama.">
   <!-- Page Header -->
-  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid var(--border-color);">
     <div class="glow-mesh glow-mesh-1" style="opacity: 0.3;"></div>
     <div class="container" style="position: relative; z-index: 1;">
-      <span class="badge" style="background-color: rgba(99, 102, 241, 0.2); color: var(--secondary-violet-light);">Keahlian Hukum</span>
+      <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light);">Keahlian Hukum</span>
       <h1 style="color: var(--text-light); font-size: 3rem; margin-bottom: 1rem;">Bidang Praktik Hukum</h1>
-      <p style="color: var(--text-light-muted); max-width: 600px; font-size: 1.1rem;">Kami menawarkan spektrum solusi hukum yang komprehensif bagi bisnis, korporasi, dan perorangan.</p>
+      <p style="color: var(--text-light-muted); max-width: 600px; font-size: 1.1rem;">Kami menawarkan spektrum solusi hukum komprehensif bagi bisnis, korporasi, serta perorangan.</p>
     </div>
   </section>
 
@@ -34,7 +34,7 @@ import Button from '../components/Button.astro';
         <!-- Service 2: Litigation & Dispute Resolution -->
         <ServiceCard 
           title="Litigasi & Penyelesaian Sengketa" 
-          description="Representasi hukum di pengadilan untuk kasus perdata, sengketa bisnis, gugatan wanprestasi, perkara pidana, hingga arbitrase dan negosiasi mediasi di luar pengadilan."
+          description="Representasi hukum di pengadilan untuk kasus perdata umum, gugatan wanprestasi, perkara pidana pembelaan hak hukum, hingga arbitrase dan negosiasi mediasi di luar pengadilan."
           id="litigation"
         >
           <svg slot="icon" style="width: 2.75rem; height: 2.75rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,19 @@ import Button from '../components/Button.astro';
           </svg>
         </ServiceCard>
 
-        <!-- Service 3: Intellectual Property -->
+        <!-- Service 3: Religious Court / Pengadilan Agama -->
+        <ServiceCard 
+          title="Hukum Pengadilan Agama & Litigasi Syariah" 
+          description="Penyelesaian sengketa di Pengadilan Agama meliputi perceraian (cerai talak/gugat), sengketa harta bersama (gono-gini), hak asuh anak (hadhanah), pembagian waris sharia (Faraid), nafkah anak/istri, hibah, serta sengketa ekonomi syariah."
+          id="religion-court"
+          href="/contact"
+        >
+          <svg slot="icon" style="width: 2.75rem; height: 2.75rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-2.76 0-5 2.24-5 5v5h10v-5c0-2.76-2.24-5-5-5zm-3.5 9c-.28 0-.5-.22-.5-.5V14h1v3.5c0 .28-.22.5-.5.5zm7 0c-.28 0-.5-.22-.5-.5V14h1v3.5c0 .28-.22.5-.5.5z"/>
+          </svg>
+        </ServiceCard>
+
+        <!-- Service 4: Intellectual Property -->
         <ServiceCard 
           title="Hak Kekayaan Intelektual" 
           description="Pendaftaran dan perlindungan merek dagang, hak cipta, paten, rahasia dagang, pendampingan hukum terhadap pelanggaran hak cipta, lisensi, dan waralaba."
@@ -53,7 +65,7 @@ import Button from '../components/Button.astro';
           </svg>
         </ServiceCard>
 
-        <!-- Service 4: Employment Law -->
+        <!-- Service 5: Employment Law -->
         <ServiceCard 
           title="Hukum Ketenagakerjaan" 
           description="Penyusunan Peraturan Perusahaan (PP) atau Perjanjian Kerja Bersama (PKB), penanganan perselisihan hubungan industrial (PHI), PHK, audit ketenagakerjaan, dan kontrak kerja."
@@ -64,7 +76,7 @@ import Button from '../components/Button.astro';
           </svg>
         </ServiceCard>
 
-        <!-- Service 5: Restructuring & Bankruptcy -->
+        <!-- Service 6: Restructuring & Bankruptcy -->
         <ServiceCard 
           title="Restrukturisasi & Kepailitan" 
           description="Pendampingan hukum dalam proses Penundaan Kewajiban Pembayaran Utang (PKPU), pengajuan kepailitan, negosiasi restrukturisasi utang perbankan maupun komersial."
@@ -75,7 +87,7 @@ import Button from '../components/Button.astro';
           </svg>
         </ServiceCard>
 
-        <!-- Service 6: Tax & Transaction Law -->
+        <!-- Service 7: Tax & Transaction Law -->
         <ServiceCard 
           title="Hukum Transaksi & Pajak" 
           description="Penyusunan legal opinion transaksi finansial, analisis kepatuhan pajak korporasi, pendampingan sengketa perpajakan di Pengadilan Pajak, dan perencanaan pajak legal."
@@ -91,12 +103,12 @@ import Button from '../components/Button.astro';
   </section>
 
   <!-- CTA section -->
-  <section style="background: var(--indigo-gradient); color: var(--text-light); text-align: center;">
+  <section style="background: var(--indigo-gradient); color: var(--text-light); text-align: center; border-top: 1px solid var(--border-color);">
     <div class="container">
       <div style="max-width: 600px; margin: 0 auto;">
         <h2 style="color: var(--text-light); margin-bottom: 1rem;">Apakah Kasus Anda Tidak Tercantum di Sini?</h2>
         <p style="color: var(--text-light-muted); margin-bottom: 2.5rem;">Firma kami menangani berbagai penyelesaian perkara hukum lainnya. Silakan hubungi kami untuk mendiskusikan kualifikasi kasus Anda.</p>
-        <Button href="/contact" variant="primary" style="background: var(--gold-gradient); color: var(--primary-indigo);" id="practice-cta-btn">Diskusikan Kebutuhan Anda</Button>
+        <Button href="/contact" variant="primary" style="background: var(--violet-gradient); color: #ffffff;" id="practice-cta-btn">Diskusikan Kebutuhan Anda</Button>
       </div>
     </div>
   </section>

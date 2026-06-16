@@ -6,10 +6,10 @@ import Button from '../components/Button.astro';
 
 <MainLayout title="Hubungi Kami" activePage="contact" description="Hubungi kantor Basyir Legal Partners di Sumedang Selatan. Konsultasikan permasalahan hukum bisnis, perdata, pidana, dan lainnya.">
   <!-- Page Header -->
-  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid var(--border-color);">
     <div class="glow-mesh glow-mesh-1" style="opacity: 0.3;"></div>
     <div class="container" style="position: relative; z-index: 1;">
-      <span class="badge" style="background-color: rgba(99, 102, 241, 0.2); color: var(--secondary-violet-light);">Hubungi Mitra Kami</span>
+      <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light);">Hubungi Mitra Kami</span>
       <h1 style="color: var(--text-light); font-size: 3rem; margin-bottom: 1rem;">Hubungi Kami</h1>
       <p style="color: var(--text-light-muted); max-width: 600px; font-size: 1.1rem;">Hubungi kantor kami atau isi formulir konsultasi untuk berbicara langsung dengan advokat kami.</p>
     </div>
@@ -18,68 +18,68 @@ import Button from '../components/Button.astro';
   <!-- Contact Body Section -->
   <section style="background-color: var(--bg-light);">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: start;">
+      <div class="responsive-grid-contact">
         
         <!-- Left Side: Address & Map Details -->
         <div style="display: flex; flex-direction: column; gap: 2.5rem;">
           <div>
-            <h2 style="color: var(--primary-indigo); margin-bottom: 1.5rem; font-size: 2rem;">Kantor Kami</h2>
-            <p style="margin-bottom: 2rem; font-size: 1.05rem;">
+            <h2 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 2rem;">Kantor Kami</h2>
+            <p style="margin-bottom: 2rem; font-size: 1.05rem; color: var(--text-dark-muted);">
               Kami menyambut kedatangan Anda untuk berkonsultasi secara tatap muka di kantor utama kami yang berlokasi strategis di Sumedang Selatan.
             </p>
             
             <!-- Address details cards -->
             <div style="display: flex; flex-direction: column; gap: 1.25rem;">
               <!-- Detail Alamat (Klik → Google Maps) -->
-              <a href="https://maps.google.com/?q=Gg.+Cipada+II+No.42+Kotakulon+Sumedang+Selatan+Jawa+Barat+45311" target="_blank" rel="noopener noreferrer" class="card" style="padding: 1.5rem; flex-direction: row; gap: 1rem; align-items: flex-start; border-color: rgba(99, 102, 241, 0.15); text-decoration: none; color: inherit; cursor: pointer;" id="contact-address-link">
+              <a href="https://maps.google.com/?q=Gg.+Cipada+II+No.42+Kotakulon+Sumedang+Selatan+Jawa+Barat+45311" target="_blank" rel="noopener noreferrer" class="card" style="padding: 1.5rem; flex-direction: row; gap: 1rem; align-items: flex-start; border-color: var(--border-color); text-decoration: none; color: inherit; cursor: pointer;" id="contact-address-link">
                 <div style="color: var(--secondary-violet); flex-shrink: 0; padding-top: 0.2rem;">
                   <svg style="width: 1.75rem; height: 1.75rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
                 </div>
                 <div>
-                  <h4 style="margin-bottom: 0.25rem; font-size: 1.1rem;">Alamat Kantor <span style="font-size: 0.75rem; color: var(--secondary-violet);">↗ Maps</span></h4>
-                  <p style="font-size: 0.95rem; line-height: 1.5;">Gg. Cipada II No.42, Kotakulon, Kec. Sumedang Sel., Kabupaten Sumedang, Jawa Barat 45311</p>
+                  <h4 style="margin-bottom: 0.25rem; font-size: 1.1rem; color: var(--text-light);">Alamat Kantor <span style="font-size: 0.75rem; color: var(--secondary-violet);">↗ Maps</span></h4>
+                  <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-dark-muted);">Gg. Cipada II No.42, Kotakulon, Kec. Sumedang Sel., Kabupaten Sumedang, Jawa Barat 45311</p>
                 </div>
               </a>
 
               <!-- Detail Telepon (Klik → WhatsApp) -->
-              <a href="https://wa.me/6282117890656" target="_blank" rel="noopener noreferrer" class="card" style="padding: 1.5rem; flex-direction: row; gap: 1rem; align-items: flex-start; border-color: rgba(99, 102, 241, 0.15); text-decoration: none; color: inherit; cursor: pointer;" id="contact-phone-link">
+              <a href="https://wa.me/6282117890656" target="_blank" rel="noopener noreferrer" class="card" style="padding: 1.5rem; flex-direction: row; gap: 1rem; align-items: flex-start; border-color: var(--border-color); text-decoration: none; color: inherit; cursor: pointer;" id="contact-phone-link">
                 <div style="color: var(--secondary-violet); flex-shrink: 0; padding-top: 0.2rem;">
                   <svg style="width: 1.75rem; height: 1.75rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.62 10.79a15.15 15.15 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.01-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
                 </div>
                 <div>
-                  <h4 style="margin-bottom: 0.25rem; font-size: 1.1rem;">WhatsApp <span style="font-size: 0.75rem; color: var(--secondary-violet);">↗ Chat</span></h4>
-                  <p style="font-size: 0.95rem;">082117890656</p>
+                  <h4 style="margin-bottom: 0.25rem; font-size: 1.1rem; color: var(--text-light);">WhatsApp <span style="font-size: 0.75rem; color: var(--secondary-violet);">↗ Chat</span></h4>
+                  <p style="font-size: 0.95rem; color: var(--text-dark-muted);">082117890656</p>
                 </div>
               </a>
 
               <!-- Detail Email (Klik → Gmail) -->
-              <a href="mailto:albasyir140@gmail.com" class="card" style="padding: 1.5rem; flex-direction: row; gap: 1rem; align-items: flex-start; border-color: rgba(99, 102, 241, 0.15); text-decoration: none; color: inherit; cursor: pointer;" id="contact-email-link">
+              <a href="mailto:albasyir140@gmail.com" class="card" style="padding: 1.5rem; flex-direction: row; gap: 1rem; align-items: flex-start; border-color: var(--border-color); text-decoration: none; color: inherit; cursor: pointer;" id="contact-email-link">
                 <div style="color: var(--secondary-violet); flex-shrink: 0; padding-top: 0.2rem;">
                   <svg style="width: 1.75rem; height: 1.75rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                   </svg>
                 </div>
                 <div>
-                  <h4 style="margin-bottom: 0.25rem; font-size: 1.1rem;">Email <span style="font-size: 0.75rem; color: var(--secondary-violet);">↗ Kirim</span></h4>
-                  <p style="font-size: 0.95rem;">albasyir140@gmail.com</p>
+                  <h4 style="margin-bottom: 0.25rem; font-size: 1.1rem; color: var(--text-light);">Email <span style="font-size: 0.75rem; color: var(--secondary-violet);">↗ Kirim</span></h4>
+                  <p style="font-size: 0.95rem; color: var(--text-dark-muted);">albasyir140@gmail.com</p>
                 </div>
               </a>
             </div>
           </div>
 
           <!-- Maps Preview -->
-          <div class="card" style="padding: 1.5rem; border-color: rgba(99, 102, 241, 0.2); overflow: hidden;">
-            <h4 style="margin-bottom: 1rem;">Lokasi Pada Peta</h4>
+          <div class="card" style="padding: 1.5rem; border-color: var(--border-color); overflow: hidden;">
+            <h4 style="margin-bottom: 1rem; color: var(--text-light);">Lokasi Pada Peta</h4>
             
             <!-- Premium Simulated Map view using CSS/SVG patterns -->
             <div style="
               width: 100%;
               height: 200px;
-              background-color: #e5e7eb;
+              background-color: #1a1a1a;
               border-radius: var(--radius-md);
               margin-bottom: 1.5rem;
               position: relative;
@@ -94,8 +94,8 @@ import Button from '../components/Button.astro';
                 position: absolute;
                 top: 0; left: 0; right: 0; bottom: 0;
                 background-image: 
-                  linear-gradient(rgba(0,0,0,0.05) 1px, transparent 1px),
-                  linear-gradient(90deg, rgba(0,0,0,0.05) 1px, transparent 1px);
+                  linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
                 background-size: 40px 40px;
               "></div>
               
@@ -103,33 +103,33 @@ import Button from '../components/Button.astro';
               <div style="
                 position: absolute;
                 width: 150%; height: 30px;
-                background-color: #ffffff;
+                background-color: #262626;
                 transform: rotate(30deg);
                 top: 80px; left: -20%;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
               "></div>
               
               <!-- Map primary straight road mock -->
               <div style="
                 position: absolute;
                 width: 35px; height: 100%;
-                background-color: #ffffff;
+                background-color: #262626;
                 top: 0; left: 60%;
-                box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
               "></div>
 
               <!-- Map Greenery park mock (Alun-alun) -->
               <div style="
                 position: absolute;
                 width: 120px; height: 100px;
-                background-color: #d1fae5;
+                background-color: #142c1f;
                 border-radius: var(--radius-md);
                 top: 20px; left: 15%;
-                border: 2px dashed #a7f3d0;
+                border: 2px dashed #065f46;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: #065f46;
+                color: #34d399;
                 font-size: 0.75rem;
                 font-weight: 700;
               ">
@@ -151,8 +151,8 @@ import Button from '../components/Button.astro';
                   border-radius: var(--radius-full) var(--radius-full) 0 var(--radius-full);
                   background: var(--violet-gradient);
                   transform: rotate(-45deg);
-                  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
-                  border: 2px solid white;
+                  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+                  border: 2px solid #1a1a1a;
                   display: flex;
                   align-items: center;
                   justify-content: center;
@@ -162,7 +162,7 @@ import Button from '../components/Button.astro';
               </div>
             </div>
 
-            <Button href="https://maps.google.com/?q=Gg.+Cipada+II+No.42+Kotakulon+Sumedang+Selatan+Jawa+Barat+45311" target="_blank" variant="secondary" style="width: 100%;" id="open-google-maps-btn">
+            <Button href="https://maps.google.com/?q=Gg.+Cipada+II+No.42+Kotakulon+Sumedang+Selatan+Jawa+Barat+45311" target="_blank" variant="secondary" style="width: 100%; border-color: var(--border-color);" id="open-google-maps-btn">
               Buka di Google Maps
               <svg style="width: 1.1rem; height: 1.1rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 19H5V5h7V3H5c-1.11 0-2 .90-2 2v14c0 1.10.89 2 2 2h14c1.10 0 2-.90 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>

@@ -8,40 +8,40 @@
 }
 
 :root {
-  /* Color Palette */
-  --primary-indigo: #1e1b4b;
-  --primary-indigo-light: #312e81;
-  --primary-indigo-dark: #0f0d30;
-  --secondary-violet: #6d28d9;
-  --secondary-violet-light: #8b5cf6;
-  --accent-gold: #d97706;
-  --accent-gold-hover: #b45309;
+  /* Color Palette - Updated to Elegant Red & Black Theme */
+  --primary-indigo: #ffffff; /* Headings are white in dark theme */
+  --primary-indigo-light: #f4f4f5;
+  --primary-indigo-dark: #000000;
+  --secondary-violet: #dc2626; /* Crimson Red */
+  --secondary-violet-light: #ef4444; /* Bright Red */
+  --accent-gold: #b91c1c; /* Crimson Red dark */
+  --accent-gold-hover: #7f1d1d;
   
-  --bg-dark: #0b0f19;
-  --bg-dark-card: #141c2f;
-  --bg-light: #f8fafc;
-  --bg-light-card: #ffffff;
+  --bg-dark: #0a0a0a; /* Deep Black background */
+  --bg-dark-card: #141414; /* Charcoal Black card background */
+  --bg-light: #0f0f0f; /* Secondary Dark background */
+  --bg-light-card: #181818; /* Card background */
   
-  --text-dark: #0f172a;
-  --text-dark-muted: #475569;
-  --text-light: #f8fafc;
-  --text-light-muted: #94a3b8;
+  --text-dark: #f4f4f5; /* Light text for readability */
+  --text-dark-muted: #a1a1aa; /* Muted light grey text */
+  --text-light: #ffffff;
+  --text-light-muted: #d4d4d8;
   
-  --border-color: rgba(99, 102, 241, 0.15);
-  --border-color-dark: rgba(99, 102, 241, 0.25);
+  --border-color: rgba(220, 38, 38, 0.15); /* Red borders */
+  --border-color-dark: rgba(220, 38, 38, 0.25);
   
   /* Gradients */
-  --indigo-gradient: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
-  --violet-gradient: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-  --gold-gradient: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
-  --dark-gradient: linear-gradient(180deg, #0b0f19 0%, #151c2d 100%);
+  --indigo-gradient: linear-gradient(135deg, #141414 0%, #050505 100%); /* Sleek dark gradient */
+  --violet-gradient: linear-gradient(135deg, #991b1b 0%, #ef4444 100%); /* Vibrant Red gradient */
+  --gold-gradient: linear-gradient(135deg, #b91c1c 0%, #dc2626 100%); /* Red gradient for CTAs */
+  --dark-gradient: linear-gradient(180deg, #050505 0%, #141414 100%);
   
   /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-colored: 0 20px 25px -5px rgba(79, 70, 229, 0.12), 0 10px 10px -5px rgba(79, 70, 229, 0.06);
-  --shadow-colored-hover: 0 25px 30px -5px rgba(79, 70, 229, 0.2), 0 15px 15px -5px rgba(79, 70, 229, 0.1);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -2px rgba(0, 0, 0, 0.5);
+  --shadow-colored: 0 20px 25px -5px rgba(220, 38, 38, 0.15), 0 10px 10px -5px rgba(220, 38, 38, 0.08);
+  --shadow-colored-hover: 0 25px 30px -5px rgba(220, 38, 38, 0.25), 0 15px 15px -5px rgba(220, 38, 38, 0.15);
   
   /* Transitions */
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -110,7 +110,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
@@ -433,13 +433,62 @@ textarea.form-control {
   resize: vertical;
 }
 
-/* Background Gradients & Mesh Shapes for Wow Factor */
+/* Responsive Grid Utilities */
+.responsive-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.responsive-grid-about {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.responsive-grid-contact {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .responsive-grid-2 {
+    gap: 3rem;
+  }
+  .responsive-grid-about {
+    gap: 3rem;
+  }
+  .responsive-grid-contact {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  .responsive-grid-about {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .responsive-grid-contact {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
 .glow-mesh {
   position: absolute;
   width: 600px;
   height: 600px;
   border-radius: var(--radius-full);
-  background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0) 70%);
+  background: radial-gradient(circle, rgba(220, 38, 38, 0.08) 0%, rgba(220, 38, 38, 0) 70%);
   z-index: 0;
   pointer-events: none;
 }

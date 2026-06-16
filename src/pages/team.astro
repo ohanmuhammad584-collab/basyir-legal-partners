@@ -4,21 +4,21 @@ import TeamCard from '../components/TeamCard.astro';
 import Button from '../components/Button.astro';
 ---
 
-<MainLayout title="Tim Pengacara" activePage="team" description="Profil pengacara dan partner hukum utama di Basyir Legal Partners Sumedang. Didukung oleh praktisi hukum berpengalaman dan berintegritas.">
+<MainLayout title="Tim Pengacara" activePage="team" description="Profil pengacara dan partner hukum utama di Basyir Legal Partners Sumedang. Didukung oleh praktisi hukum berpengalaman, ahli, dan berintegritas.">
   <!-- Page Header -->
-  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid var(--border-color);">
     <div class="glow-mesh glow-mesh-1" style="opacity: 0.3;"></div>
     <div class="container" style="position: relative; z-index: 1;">
-      <span class="badge" style="background-color: rgba(99, 102, 241, 0.2); color: var(--secondary-violet-light);">Advokat & Partner</span>
+      <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light);">Advokat & Partner</span>
       <h1 style="color: var(--text-light); font-size: 3rem; margin-bottom: 1rem;">Tim Pengacara Kami</h1>
-      <p style="color: var(--text-light-muted); max-width: 600px; font-size: 1.1rem;">Berkenalan dengan tim pengacara profesional yang berdedikasi menjaga kepatuhan hukum Anda.</p>
+      <p style="color: var(--text-light-muted); max-width: 600px; font-size: 1.1rem;">Berkenalan dengan tim pengacara profesional yang berdedikasi tinggi menjaga hak dan kepatuhan hukum Anda.</p>
     </div>
   </section>
 
   <!-- Team Grid Section -->
   <section style="background-color: var(--bg-light);">
     <div class="container">
-      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
         
         <!-- Lawyer 1 -->
         <TeamCard 
@@ -27,6 +27,7 @@ import Button from '../components/Button.astro';
           specialty="Hukum Korporasi & M&A" 
           email="adrian@basyirlegal.id" 
           initials="AB"
+          description="Spesialis transaksi bisnis internasional, merger, akuisisi, kepatuhan regulasi korporasi, serta penyusunan kontrak dagang multinasional dengan pengalaman 15 tahun."
           id="lawyer-adrian"
         />
 
@@ -34,9 +35,10 @@ import Button from '../components/Button.astro';
         <TeamCard 
           name="Kirana Wijaya, S.H., M.H." 
           role="Senior Partner" 
-          specialty="Litigasi & Penyelesaian Sengketa" 
+          specialty="Litigasi & Penyelesaian Perkara" 
           email="kirana@basyirlegal.id" 
           initials="KW"
+          description="Advokat litigasi senior berpengalaman memimpin persidangan perdata umum, sengketa wanprestasi, perkara pidana, serta mediasi sengketa di luar pengadilan."
           id="lawyer-kirana"
         />
 
@@ -47,7 +49,41 @@ import Button from '../components/Button.astro';
           specialty="Hak Kekayaan Intelektual & Teknologi" 
           email="david@basyirlegal.id" 
           initials="DC"
+          description="Melindungi hak paten, cipta, merek dagang, rahasia dagang, lisensi waralaba, serta mengurus kepatuhan hukum transaksi elektronik dan industri kreatif."
           id="lawyer-david"
+        />
+
+        <!-- Lawyer 4 -->
+        <TeamCard 
+          name="H. Ahmad Basyir, S.H., M.Sy." 
+          role="Senior Consultant" 
+          specialty="Hukum Syariah & Waris Islam" 
+          email="ahmad@basyirlegal.id" 
+          initials="HAB"
+          description="Pakar hukum syariah Islam dengan keahlian mendalam dalam memediasi pembagian harta waris (Faraid), hibah, wakaf, dan kepatuhan transaksi ekonomi syariah."
+          id="lawyer-ahmad"
+        />
+
+        <!-- Lawyer 5 -->
+        <TeamCard 
+          name="Rania Salsabila, S.H., M.H." 
+          role="Associate Lawyer" 
+          specialty="Hukum Pengadilan Agama" 
+          email="rania@basyirlegal.id" 
+          initials="RS"
+          description="Secara khusus menangani perkara cerai gugat/talak, sengketa hak asuh anak (hadhanah), nafkah istri/anak bulanan, serta gono-gini secara empati, taktis, dan tuntas."
+          id="lawyer-rania"
+        />
+
+        <!-- Lawyer 6 -->
+        <TeamCard 
+          name="Bambang Pratama, S.H." 
+          role="Associate Lawyer" 
+          specialty="Ketenagakerjaan & Kriminal" 
+          email="bambang@basyirlegal.id" 
+          initials="BP"
+          description="Berpengalaman mendampingi perselisihan hubungan industrial, penyusunan PKB, audit kepatuhan ketenagakerjaan, serta pembelaan hukum perkara pidana umum."
+          id="lawyer-bambang"
         />
 
       </div>
@@ -58,8 +94,8 @@ import Button from '../components/Button.astro';
   <section style="background-color: var(--bg-light-card); border-top: 1px solid var(--border-color); text-align: center;">
     <div class="container">
       <div style="max-width: 650px; margin: 0 auto;">
-        <h2 style="color: var(--primary-indigo); margin-bottom: 1.5rem;">Ingin Bergabung atau Berkonsultasi Langsung?</h2>
-        <p style="margin-bottom: 2.5rem;">Kami percaya pada kolaborasi dan dedikasi penuh untuk membela hak klien. Silakan klik tombol di bawah untuk menjadwalkan pertemuan privat dengan salah satu partner kami.</p>
+        <h2 style="color: var(--text-light); margin-bottom: 1.5rem;">Ingin Bergabung atau Berkonsultasi Langsung?</h2>
+        <p style="margin-bottom: 2.5rem; color: var(--text-dark-muted);">Kami percaya pada kolaborasi dan dedikasi penuh untuk membela hak klien. Silakan klik tombol di bawah untuk menjadwalkan pertemuan privat dengan salah satu partner kami.</p>
         <Button href="/contact" variant="primary" id="team-cta-btn">Jadwalkan Konsultasi</Button>
       </div>
     </div>

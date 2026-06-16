@@ -5,42 +5,42 @@ import Button from '../components/Button.astro';
 
 <MainLayout title="Tentang Kami" activePage="about" description="Pelajari visi unik, misi, dan sejarah pendirian Basyir Legal Partners sebagai salah satu kantor hukum berintegritas di Sumedang.">
   <!-- Page Header -->
-  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid var(--border-color);">
     <div class="glow-mesh glow-mesh-1" style="opacity: 0.3;"></div>
     <div class="container" style="position: relative; z-index: 1;">
-      <span class="badge" style="background-color: rgba(99, 102, 241, 0.2); color: var(--secondary-violet-light);">Profil Firma</span>
+      <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light);">Profil Firma</span>
       <h1 style="color: var(--text-light); font-size: 3rem; margin-bottom: 1rem;">Tentang Kami</h1>
-      <p style="color: var(--text-light-muted); max-width: 600px; font-size: 1.1rem;">Kenali nilai, visi unik, dan integritas profesional di balik keahlian hukum kami.</p>
+      <p style="color: var(--text-light-muted); max-width: 600px; font-size: 1.1rem;">Kenali nilai, visi unik, dan rekam jejak penyelesaian kasus hukum dari tim advokat kami.</p>
     </div>
   </section>
 
   <!-- Narrative & Visi Misi -->
   <section style="background-color: var(--bg-light-card);">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: flex-start;">
+      <div class="responsive-grid-about">
         <!-- Narrative & History -->
         <div>
-          <h2 style="color: var(--primary-indigo); margin-bottom: 1.5rem; font-size: 2rem;">Visi & Sejarah Kami</h2>
+          <h2 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 2rem;">Visi & Sejarah Kami</h2>
           <blockquote style="
             border-left: 4px solid var(--secondary-violet);
             padding-left: 1.5rem;
             margin-bottom: 2rem;
             font-size: 1.25rem;
             font-style: italic;
-            color: var(--primary-indigo);
+            color: var(--text-light);
             font-weight: 600;
             line-height: 1.6;
           ">
             "Menjadi mitra hukum terdepan yang tidak hanya menyelesaikan masalah hukum, tetapi juga mendeteksi dan mencegah risiko hukum demi pertumbuhan berkelanjutan klien kami."
           </blockquote>
           
-          <p style="margin-bottom: 1.5rem; line-height: 1.7; font-size: 1.05rem;">
+          <p style="margin-bottom: 1.5rem; line-height: 1.7; font-size: 1.05rem; color: var(--text-dark-muted);">
             Basyir Legal Partners didirikan di Sumedang oleh para konsultan dan advokat berpengalaman dengan latar belakang komprehensif di bidang hukum bisnis, perdata, pidana, dan regulasi ketenagakerjaan. Kami lahir dari pemahaman bahwa dunia hukum sering kali rumit dan intimidatif bagi pebisnis maupun individu.
           </p>
-          <p style="margin-bottom: 1.5rem; line-height: 1.7; font-size: 1rem;">
+          <p style="margin-bottom: 1.5rem; line-height: 1.7; font-size: 1rem; color: var(--text-dark-muted);">
             Seiring perkembangan dinamika dunia usaha, kami mengadopsi cara kerja modern: adaptif, memanfaatkan teknologi untuk efisiensi, dan menekankan transparansi. Kami bangga dapat melayani masyarakat Sumedang dan sekitarnya dengan menghadirkan keahlian hukum tingkat tinggi tanpa melupakan kedekatan hubungan personal yang hangat dengan klien kami.
           </p>
-          <p style="line-height: 1.7; font-size: 1rem;">
+          <p style="line-height: 1.7; font-size: 1rem; color: var(--text-dark-muted);">
             Kami berdedikasi sepenuhnya untuk menjunjung tinggi kode etik advokat dan hukum yang berlaku, memastikan setiap langkah kepatuhan dan mitigasi risiko dirancang secara cermat demi mendukung pertumbuhan dan kelancaran bisnis Anda.
           </p>
         </div>
@@ -48,23 +48,23 @@ import Button from '../components/Button.astro';
         <!-- Vision and Mission Cards -->
         <div style="display: flex; flex-direction: column; gap: 2rem;">
           <!-- Vision -->
-          <div class="card" style="padding: 2rem; border-color: rgba(99, 102, 241, 0.2);">
+          <div class="card" style="padding: 2rem; border-color: var(--border-color);">
             <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
               <svg style="width: 1.75rem; height: 1.75rem; fill: var(--secondary-violet);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
               </svg>
-              <h3 style="font-size: 1.35rem; color: var(--primary-indigo);">Visi Firma</h3>
+              <h3 style="font-size: 1.35rem; color: var(--text-light);">Visi Firma</h3>
             </div>
-            <p style="font-size: 0.95rem; line-height: 1.6;">Menjadi mitra hukum terpercaya dan berkelas nasional di wilayah Sumedang, terkenal akan kejujuran, komitmen, dan ketelitian solusi hukum preventif.</p>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: var(--text-dark-muted);">Menjadi mitra hukum terpercaya dan berkelas nasional di wilayah Sumedang, terkenal akan kejujuran, komitmen, dan ketelitian solusi hukum preventif.</p>
           </div>
 
           <!-- Mission -->
-          <div class="card" style="padding: 2rem; border-color: rgba(99, 102, 241, 0.2);">
+          <div class="card" style="padding: 2rem; border-color: var(--border-color);">
             <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
               <svg style="width: 1.75rem; height: 1.75rem; fill: var(--secondary-violet);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10H7v-2h10v2zm0-4H7V7h10v2zm0 8H7v-2h10v2z"/>
               </svg>
-              <h3 style="font-size: 1.35rem; color: var(--primary-indigo);">Misi Kami</h3>
+              <h3 style="font-size: 1.35rem; color: var(--text-light);">Misi Kami</h3>
             </div>
             <ul style="font-size: 0.95rem; line-height: 1.6; color: var(--text-dark-muted); padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
               <li>Menyediakan pelayanan jasa hukum berstandar tinggi yang efisien dan tepat sasaran.</li>
@@ -77,11 +77,92 @@ import Button from '../components/Button.astro';
     </div>
   </section>
 
-  <!-- CTA banner -->
+  <!-- Solved Cases / Track Record Section -->
   <section style="background-color: var(--bg-light); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem auto;">
+        <span class="badge" style="align-self: center;">Bukti Rekam Jejak</span>
+        <h2 style="color: var(--text-light); margin-bottom: 1rem;">Penyelesaian Kasus Nyata</h2>
+        <p style="color: var(--text-dark-muted);">Sebagai bukti keandalan kami, berikut adalah rekam jejak penyelesaian perkara hukum penting yang telah kami tangani di wilayah Sumedang dan sekitarnya.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+        
+        <!-- Case 1: Perceraian -->
+        <div class="card" style="border-color: var(--border-color); flex-direction: row; gap: 2.5rem; align-items: center; flex-wrap: wrap; padding: 2.5rem;">
+          <div style="flex: 1; min-width: 280px;">
+            <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light); font-size: 0.75rem;">Kasus Hukum Keluarga</span>
+            <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.5rem;">Penyelesaian Perceraian Kontensius & Hak Asuh</h3>
+            <p style="color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+              Kami mewakili seorang ibu dalam perkara cerai gugat yang rumit di Pengadilan Agama Sumedang. Pihak lawan sempat berupaya mengabaikan kewajiban nafkah dan menguasai anak secara sepihak.
+            </p>
+            <ul style="color: var(--text-dark-muted); font-size: 0.9rem; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <li><strong>Hasil Sidang:</strong> Gugatan cerai dikabulkan penuh oleh Majelis Hakim.</li>
+              <li><strong>Hak Asuh:</strong> Hak asuh atas kedua anak di bawah umur dimenangkan secara mutlak oleh klien kami.</li>
+              <li><strong>Kewajiban Hukum:</strong> Pihak mantan suami dihukum membayar nafkah iddah, mut'ah, dan nafkah anak bulanan secara teratur.</li>
+            </ul>
+          </div>
+          <div style="width: 250px; background-color: #121212; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; text-align: center; flex-shrink: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: center; margin: 0 auto;">
+            <span style="font-size: 0.8rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;">Lokasi Perkara</span>
+            <span style="font-size: 1.15rem; color: var(--text-light); font-weight: 800; display: block; margin-bottom: 1.5rem;">PA Sumedang</span>
+            <span style="font-size: 0.8rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;">Status Kasus</span>
+            <span class="badge" style="background-color: rgba(34, 197, 94, 0.15); color: #22c55e; align-self: center; margin-bottom: 0; font-size: 0.8rem; font-weight: 800;">SELESAI (INKRAH)</span>
+          </div>
+        </div>
+
+        <!-- Case 2: Warisan -->
+        <div class="card" style="border-color: var(--border-color); flex-direction: row; gap: 2.5rem; align-items: center; flex-wrap: wrap; padding: 2.5rem;">
+          <div style="flex: 1; min-width: 280px;">
+            <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light); font-size: 0.75rem;">Sengketa Harta & Waris</span>
+            <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.5rem;">Pembagian Waris Sharia & Mediasi Keluarga</h3>
+            <p style="color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+              Pendampingan hukum bagi ahli waris atas aset peninggalan orang tua berupa beberapa bidang tanah dan unit ruko senilai total Rp 3,2 Milyar yang sempat mengalami kebuntuan pembagian waris selama bertahun-tahun.
+            </p>
+            <ul style="color: var(--text-dark-muted); font-size: 0.9rem; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <li><strong>Hasil Mediasi:</strong> Sukses menyusun draf kesepakatan pembagian waris berlandaskan hukum waris Islam (Faraid) yang disepakati seluruh keluarga.</li>
+              <li><strong>Penyelesaian:</strong> Pembuatan akta perdamaian tertulis berkekuatan hukum, menghindari gugatan sidang pengadilan.</li>
+              <li><strong>Dampak:</strong> Hubungan persaudaraan antar keluarga tetap harmonis karena proses pembagian transparan.</li>
+            </ul>
+          </div>
+          <div style="width: 250px; background-color: #121212; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; text-align: center; flex-shrink: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: center; margin: 0 auto;">
+            <span style="font-size: 0.8rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;">Jalur Hukum</span>
+            <span style="font-size: 1.15rem; color: var(--text-light); font-weight: 800; display: block; margin-bottom: 1.5rem;">Mediasi (Non-Litigasi)</span>
+            <span style="font-size: 0.8rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;">Status Kasus</span>
+            <span class="badge" style="background-color: rgba(34, 197, 94, 0.15); color: #22c55e; align-self: center; margin-bottom: 0; font-size: 0.8rem; font-weight: 800;">AKTA PERDAMAIAN</span>
+          </div>
+        </div>
+
+        <!-- Case 3: Hak Asuh Anak / Custody -->
+        <div class="card" style="border-color: var(--border-color); flex-direction: row; gap: 2.5rem; align-items: center; flex-wrap: wrap; padding: 2.5rem;">
+          <div style="flex: 1; min-width: 280px;">
+            <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light); font-size: 0.75rem;">Perkara Hak Asuh Anak</span>
+            <h3 style="color: var(--text-light); margin-bottom: 1rem; font-size: 1.5rem;">Gugatan Hak Asuh (Hadhanah) Anak Balita</h3>
+            <p style="color: var(--text-dark-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1.5rem;">
+              Advokasi hukum perebutan hak asuh anak balita usia 3 tahun yang dijauhkan paksa dari ibunya. Pihak kami membuktikan kelayakan hak asuh ibu demi kepentingan terbaik tumbuh kembang anak sesuai UU yang berlaku.
+            </p>
+            <ul style="color: var(--text-dark-muted); font-size: 0.9rem; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem;">
+              <li><strong>Hasil Sidang:</strong> Hak asuh anak dimenangkan oleh ibu kandung (klien kami) bersandarkan Kompilasi Hukum Islam.</li>
+              <li><strong>Penetapan Tambahan:</strong> Akses kunjungan yang teratur dan aman bagi pihak ayah diatur secara legal.</li>
+              <li><strong>Eksekusi:</strong> Sukses melakukan serah terima anak secara baik dan tertib dengan pendampingan aparat terkait.</li>
+            </ul>
+          </div>
+          <div style="width: 250px; background-color: #121212; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 2rem; text-align: center; flex-shrink: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: center; margin: 0 auto;">
+            <span style="font-size: 0.8rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;">Sidang</span>
+            <span style="font-size: 1.15rem; color: var(--text-light); font-weight: 800; display: block; margin-bottom: 1.5rem;">Gugatan Hadhanah</span>
+            <span style="font-size: 0.8rem; color: var(--text-dark-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; display: block; margin-bottom: 0.5rem;">Status Kasus</span>
+            <span class="badge" style="background-color: rgba(34, 197, 94, 0.15); color: #22c55e; align-self: center; margin-bottom: 0; font-size: 0.8rem; font-weight: 800;">DIKABULKAN HAKIM</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA banner -->
+  <section style="background-color: var(--bg-light-card); border-top: 1px solid var(--border-color);">
     <div class="container" style="text-align: center;">
-      <h2 style="color: var(--primary-indigo); margin-bottom: 1.5rem;">Butuh Pendampingan Hukum dari Pengacara Kami?</h2>
-      <p style="max-width: 600px; margin: 0 auto 2.5rem auto;">Tim partner kami siap mendengarkan kasus Anda dan memformulasikan rencana aksi perlindungan hukum yang kuat.</p>
+      <h2 style="color: var(--text-light); margin-bottom: 1.5rem;">Butuh Pendampingan Hukum dari Pengacara Kami?</h2>
+      <p style="max-width: 600px; margin: 0 auto 2.5rem auto; color: var(--text-dark-muted);">Tim partner kami siap mendengarkan kasus Anda dan memformulasikan rencana aksi perlindungan hukum yang kuat.</p>
       <Button href="/contact" variant="primary" id="about-cta-btn">Hubungi Kami Sekarang</Button>
     </div>
   </section>

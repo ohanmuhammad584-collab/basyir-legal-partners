@@ -2,7 +2,7 @@
 import Button from './Button.astro';
 ---
 
-<form action="#" method="POST" id="contact-form" class="card" style="padding: 3rem; gap: 0.5rem; border-color: rgba(99, 102, 241, 0.2);">
+<form action="#" method="POST" id="contact-form" class="card" style="padding: 3rem; gap: 0.5rem; border-color: var(--border-color-dark);">
   <h3 style="margin-bottom: 0.5rem; color: var(--primary-indigo);">Hubungi Kami</h3>
   <p style="margin-bottom: 2rem; font-size: 0.95rem;">Silakan lengkapi formulir di bawah ini untuk memulai konsultasi hukum privat via WhatsApp atau email.</p>
 
@@ -26,6 +26,7 @@ import Button from './Button.astro';
       <option value="" disabled selected hidden></option>
       <option value="corporate">Hukum Korporasi & Bisnis</option>
       <option value="litigation">Litigasi & Penyelesaian Sengketa</option>
+      <option value="religion-court">Hukum Pengadilan Agama (Cerai, Waris, Hak Asuh)</option>
       <option value="ip">Hak Kekayaan Intelektual</option>
       <option value="employment">Hukum Ketenagakerjaan</option>
       <option value="other">Konsultasi Hukum Lainnya</option>
