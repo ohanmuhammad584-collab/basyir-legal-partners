@@ -1,0 +1,166 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Button from '../components/Button.astro';
+---
+
+<MainLayout title="Beranda" activePage="home">
+  <!-- Hero Section -->
+  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 8rem 0 7rem 0;">
+    <!-- Visual decorative meshes for wow factor -->
+    <div class="glow-mesh glow-mesh-1"></div>
+    <div class="glow-mesh glow-mesh-2" style="opacity: 0.5;"></div>
+    
+    <div class="container" style="position: relative; z-index: 1;">
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <span class="badge" style="background-color: rgba(99, 102, 241, 0.2); color: var(--secondary-violet-light); font-weight: 700; align-self: center;">
+          Firma Hukum Terkemuka di Sumedang
+        </span>
+        <h1 style="color: var(--text-light); font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; line-height: 1.15; font-weight: 800; letter-spacing: -0.04em;">
+          Navigasi Hukum Tepercaya, <span style="background: var(--violet-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Solusi Bisnis Berkelanjutan</span>
+        </h1>
+        <p style="color: var(--text-light-muted); font-size: clamp(1.1rem, 2vw, 1.25rem); margin-bottom: 3rem; line-height: 1.7; font-weight: 400; max-width: 700px; margin-left: auto; margin-right: auto;">
+          Basyir Legal Partners menghadirkan keahlian hukum profesional dengan integritas tanpa kompromi untuk melindungi hak, aset, dan kepentingan strategis bisnis serta perorangan.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <Button href="/contact" variant="primary" id="hero-cta-primary">
+            Konsultasi Sekarang
+            <svg style="width: 1.25rem; height: 1.25rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/>
+            </svg>
+          </Button>
+          <Button href="/practice-areas" variant="outline-white" id="hero-cta-secondary">
+            Pelajari Layanan
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section style="background-color: var(--bg-light);">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 4rem auto;">
+        <span class="badge" style="align-self: center;">Nilai-Nilai Kami</span>
+        <h2 style="color: var(--primary-indigo); margin-bottom: 1rem;">Mengapa Memilih Kami?</h2>
+        <p>Tiga pilar utama yang melandasi komitmen kami dalam melayani setiap kebutuhan hukum klien.</p>
+      </div>
+
+      <div class="card-grid">
+        <!-- Value 1 -->
+        <div class="card" id="value-integrity">
+          <div style="width: 3.5rem; height: 3.5rem; border-radius: var(--radius-md); background: rgba(99, 102, 241, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--secondary-violet);">
+            <!-- Scale Icon -->
+            <svg style="width: 2rem; height: 2rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
+            </svg>
+          </div>
+          <h3 style="margin-bottom: 1rem;">Integritas Tanpa Kompromi</h3>
+          <p style="font-size: 0.95rem; line-height: 1.6;">Kejujuran akademis dan kepatuhan etis adalah standar tertinggi kami. Kami selalu memberikan penilaian hukum secara objektif, terbuka, dan jujur demi kebaikan jangka panjang klien.</p>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="card" id="value-expertise">
+          <div style="width: 3.5rem; height: 3.5rem; border-radius: var(--radius-md); background: rgba(99, 102, 241, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--secondary-violet);">
+            <!-- Award Icon -->
+            <svg style="width: 2rem; height: 2rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-6h2v6zm0-8h-2V7h2v4z"/>
+            </svg>
+          </div>
+          <h3 style="margin-bottom: 1rem;">Keahlian Komprehensif</h3>
+          <p style="font-size: 0.95rem; line-height: 1.6;">Tim pengacara kami memiliki spesialisasi mendalam dan pemahaman regulasi lokal serta nasional. Kami secara berkala memutakhirkan kompetensi hukum untuk menjawab dinamika hukum terkini.</p>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="card" id="value-solutions">
+          <div style="width: 3.5rem; height: 3.5rem; border-radius: var(--radius-md); background: rgba(99, 102, 241, 0.1); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; color: var(--secondary-violet);">
+            <!-- Target Icon -->
+            <svg style="width: 2rem; height: 2rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+            </svg>
+          </div>
+          <h3 style="margin-bottom: 1rem;">Fokus Pada Solusi</h3>
+          <p style="font-size: 0.95rem; line-height: 1.6;">Kami mengedepankan pendekatan pragmatis dan preventif. Kami tidak hanya mendampingi saat sengketa terjadi, melainkan aktif merancang strategi hukum untuk meminimalkan risiko di masa depan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mini About Section -->
+  <section style="background-color: var(--bg-light-card); border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+        <!-- Left Side: Visual Illustration (CSS Isometric Element) -->
+        <div style="position: relative; height: 380px; display: flex; align-items: center; justify-content: center;" id="about-visual-container">
+          <!-- Main isometric block -->
+          <div style="
+            width: 260px;
+            height: 260px;
+            background: var(--violet-gradient);
+            border-radius: var(--radius-lg);
+            transform: rotate(-15deg) skew(15deg);
+            box-shadow: 25px 25px 50px rgba(79, 70, 229, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+          ">
+            <!-- Overlay card -->
+            <div style="
+              position: absolute;
+              top: -30px;
+              left: -30px;
+              width: 100%;
+              height: 100%;
+              background-color: var(--primary-indigo);
+              border-radius: var(--radius-lg);
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              padding: 2rem;
+              color: var(--text-light);
+              box-shadow: var(--shadow-colored);
+            ">
+              <svg style="width: 3rem; height: 3rem; fill: var(--text-light);" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 5c0 6 3 11.5 10 13.5 7-2 10-7.5 10-13.5L12 2z"/>
+              </svg>
+              <div>
+                <h4 style="color: var(--text-light); margin-bottom: 0.25rem;">Basyir Legal</h4>
+                <p style="color: var(--text-light-muted); font-size: 0.85rem;">Corporate Trust & Integrity</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Content -->
+        <div>
+          <span class="badge">Tentang Firma Hukum</span>
+          <h2 style="color: var(--primary-indigo); margin-bottom: 1.5rem; font-size: 2.25rem;">Komitmen Terhadap Keadilan & Kepuasan Klien</h2>
+          <p style="margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.7;">
+            Basyir Legal Partners didirikan untuk menjawab kebutuhan solusi hukum bisnis dan litigasi berkualitas tinggi di wilayah Sumedang dan sekitarnya. Kami percaya bahwa setiap klien layak mendapatkan perlindungan hukum terbaik.
+          </p>
+          <p style="margin-bottom: 2.5rem; font-size: 0.95rem; line-height: 1.7;">
+            Dengan menggabungkan wawasan hukum lokal dengan standar profesional nasional, kami memberikan advis hukum yang bernilai tambah, adaptif, serta berorientasi pada masa depan klien kami.
+          </p>
+          <Button href="/about" variant="secondary" id="about-read-more">
+            Pelajari Sejarah & Visi Kami
+          </Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section style="background: var(--indigo-gradient); color: var(--text-light); text-align: center; padding: 6rem 0;">
+    <div class="container">
+      <div style="max-width: 700px; margin: 0 auto;">
+        <h2 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 2.25rem;">Diskusikan Masalah Hukum Anda Bersama Kami</h2>
+        <p style="color: var(--text-light-muted); margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.6;">
+          Jangan biarkan ketidakpastian hukum menghambat langkah Anda. Hubungi tim partner kami sekarang untuk mendapatkan saran hukum awal.
+        </p>
+        <Button href="/contact" variant="primary" style="background: var(--gold-gradient); color: var(--primary-indigo); box-shadow: 0 15px 30px rgba(217, 119, 6, 0.2);" id="cta-contact-btn">
+          Konsultasikan Sekarang
+        </Button>
+      </div>
+    </div>
+  </section>
+</MainLayout>

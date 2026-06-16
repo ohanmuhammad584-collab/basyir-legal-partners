@@ -1,0 +1,69 @@
+---
+interface Props {
+  name: string;
+  role: string;
+  specialty: string;
+  email: string;
+  initials: string;
+  id?: string;
+}
+
+const { name, role, specialty, email, initials, id } = Astro.props;
+---
+
+<div class="card" id={id} style="padding: 2.25rem 2rem; align-items: center; text-align: center;">
+  <!-- Premium Avatar Placeholder using Gradient -->
+  <div style="
+    width: 130px;
+    height: 130px;
+    border-radius: var(--radius-full);
+    background: var(--violet-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-colored);
+    border: 4px solid var(--bg-light-card);
+    position: relative;
+    overflow: hidden;
+  ">
+    <!-- Visual pattern overlay -->
+    <div style="
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0.15;
+      background-image: radial-gradient(circle, white 10%, transparent 10%);
+      background-size: 12px 12px;
+    "></div>
+    <span style="
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--text-light);
+      z-index: 1;
+      letter-spacing: 0.05em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    ">{initials}</span>
+  </div>
+
+  <span class="badge" style="margin-bottom: 0.75rem; font-size: 0.75rem; align-self: center;">{role}</span>
+  
+  <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary-indigo);">{name}</h3>
+  
+  <p style="font-size: 0.9rem; font-weight: 600; color: var(--secondary-violet); margin-bottom: 1rem;">
+    {specialty}
+  </p>
+  
+  <p style="font-size: 0.9rem; color: var(--text-dark-muted); margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.5;">
+    Menghadirkan keahlian hukum terfokus untuk membantu memandu keputusan hukum strategis klien kami.
+  </p>
+
+  <a href={`mailto:${email}`} class="btn btn-secondary btn-sm" style="width: 100%; border-color: rgba(99, 102, 241, 0.3);" id={`email-${initials.toLowerCase()}`}>
+    <svg style="width: 0.9rem; height: 0.9rem; fill: currentColor; margin-right: 0.35rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+    Hubungi Pengacara
+  </a>
+</div>

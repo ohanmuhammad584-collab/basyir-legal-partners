@@ -1,0 +1,67 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import TeamCard from '../components/TeamCard.astro';
+import Button from '../components/Button.astro';
+---
+
+<MainLayout title="Tim Pengacara" activePage="team" description="Profil pengacara dan partner hukum utama di Basyir Legal Partners Sumedang. Didukung oleh praktisi hukum berpengalaman dan berintegritas.">
+  <!-- Page Header -->
+  <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);">
+    <div class="glow-mesh glow-mesh-1" style="opacity: 0.3;"></div>
+    <div class="container" style="position: relative; z-index: 1;">
+      <span class="badge" style="background-color: rgba(99, 102, 241, 0.2); color: var(--secondary-violet-light);">Advokat & Partner</span>
+      <h1 style="color: var(--text-light); font-size: 3rem; margin-bottom: 1rem;">Tim Pengacara Kami</h1>
+      <p style="color: var(--text-light-muted); max-width: 600px; font-size: 1.1rem;">Berkenalan dengan tim pengacara profesional yang berdedikasi menjaga kepatuhan hukum Anda.</p>
+    </div>
+  </section>
+
+  <!-- Team Grid Section -->
+  <section style="background-color: var(--bg-light);">
+    <div class="container">
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+        
+        <!-- Lawyer 1 -->
+        <TeamCard 
+          name="Adrian Baskara, S.H., LL.M." 
+          role="Managing Partner" 
+          specialty="Hukum Korporasi & M&A" 
+          email="adrian@basyirlegal.id" 
+          initials="AB"
+          id="lawyer-adrian"
+        />
+
+        <!-- Lawyer 2 -->
+        <TeamCard 
+          name="Kirana Wijaya, S.H., M.H." 
+          role="Senior Partner" 
+          specialty="Litigasi & Penyelesaian Sengketa" 
+          email="kirana@basyirlegal.id" 
+          initials="KW"
+          id="lawyer-kirana"
+        />
+
+        <!-- Lawyer 3 -->
+        <TeamCard 
+          name="David Chen, S.H., LL.M." 
+          role="Partner" 
+          specialty="Hak Kekayaan Intelektual & Teknologi" 
+          email="david@basyirlegal.id" 
+          initials="DC"
+          id="lawyer-david"
+        />
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Team CTA -->
+  <section style="background-color: var(--bg-light-card); border-top: 1px solid var(--border-color); text-align: center;">
+    <div class="container">
+      <div style="max-width: 650px; margin: 0 auto;">
+        <h2 style="color: var(--primary-indigo); margin-bottom: 1.5rem;">Ingin Bergabung atau Berkonsultasi Langsung?</h2>
+        <p style="margin-bottom: 2.5rem;">Kami percaya pada kolaborasi dan dedikasi penuh untuk membela hak klien. Silakan klik tombol di bawah untuk menjadwalkan pertemuan privat dengan salah satu partner kami.</p>
+        <Button href="/contact" variant="primary" id="team-cta-btn">Jadwalkan Konsultasi</Button>
+      </div>
+    </div>
+  </section>
+</MainLayout>

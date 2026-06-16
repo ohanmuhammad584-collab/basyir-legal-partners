@@ -1,0 +1,55 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  activePage?: string;
+}
+
+const { title, description = "Firma Hukum Basyir Legal Partners menyediakan solusi hukum bisnis, pidana, perdata, dan ketenagakerjaan secara profesional, tepercaya, dan berintegritas tinggi di Sumedang.", activePage = "home" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="generator" content={Astro.generator} />
+  
+  <!-- SEO Meta Tags -->
+  <title>{title} | Basyir Legal Partners</title>
+  <meta name="description" content={description} />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={`${title} | Basyir Legal Partners`} />
+  <meta property="og:description" content={description} />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content={`${title} | Basyir Legal Partners`} />
+  <meta property="twitter:description" content={description} />
+</head>
+<body>
+  <!-- Global SVG definitions for logo gradients -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <linearGradient id="violet-grad-def" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#4f46e5" />
+        <stop offset="100%" stop-color="#7c3aed" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <Header activePage={activePage} />
+  
+  <slot />
+  
+  <Footer />
+</body>
+</html>
