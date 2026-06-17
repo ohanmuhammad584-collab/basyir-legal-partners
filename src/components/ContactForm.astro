@@ -50,7 +50,7 @@ import Button from './Button.astro';
   <!-- Secondary Option: Mailto Link -->
   <div style="text-align: center; margin-top: 1.25rem;">
     <p style="font-size: 0.85rem; color: var(--text-dark-muted);">
-      Atau kirim email manual ke: <a href="mailto:albasyir140@gmail.com?subject=Konsultasi Hukum - Basyir Legal Partners" style="color: var(--secondary-violet); font-weight: 700; text-decoration: none;" id="email-direct-link">albasyir140@gmail.com</a>
+      Atau kirim email manual ke: <a href="mailto:albasyir140@gmail.com?subject=Konsultasi Hukum - Legal Cortex" style="color: var(--secondary-violet); font-weight: 700; text-decoration: none;" id="email-direct-link">albasyir140@gmail.com</a>
     </p>
   </div>
 </form>
@@ -76,7 +76,7 @@ import Button from './Button.astro';
         const message = messageTextarea.value;
         
         // Format WhatsApp message
-        const waText = `Halo Basyir Legal Partners,\n\nSaya ingin berkonsultasi mengenai kasus hukum.\n\n*Detail Formulir Kontak:*\n- *Nama:* ${name}\n- *Email:* ${email}\n- *Nomor Telepon/WA:* ${phone}\n- *Kategori Kasus:* ${practiceText}\n\n*Deskripsi Permasalahan:*\n${message}`;
+        const waText = `Halo Legal Cortex,\n\nSaya ingin berkonsultasi mengenai kasus hukum.\n\n*Detail Formulir Kontak:*\n- *Nama:* ${name}\n- *Email:* ${email}\n- *Nomor Telepon/WA:* ${phone}\n- *Kategori Kasus:* ${practiceText}\n\n*Deskripsi Permasalahan:*\n${message}`;
         
         // Target WhatsApp number: 6282117890656
         const waUrl = `https://wa.me/6282117890656?text=${encodeURIComponent(waText)}`;

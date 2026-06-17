@@ -4,7 +4,7 @@ import ContactForm from '../components/ContactForm.astro';
 import Button from '../components/Button.astro';
 ---
 
-<MainLayout title="Hubungi Kami" activePage="contact" description="Hubungi kantor Basyir Legal Partners di Sumedang Selatan. Konsultasikan permasalahan hukum bisnis, perdata, pidana, dan lainnya.">
+<MainLayout title="Hubungi Kami" activePage="contact" description="Hubungi kantor Legal Cortex di Sumedang Selatan. Konsultasikan permasalahan hukum bisnis, perdata, pidana, dan lainnya.">
   <!-- Page Header -->
   <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid var(--border-color);">
     <div class="glow-mesh glow-mesh-1" style="opacity: 0.3;"></div>
@@ -16,12 +16,12 @@ import Button from '../components/Button.astro';
   </section>
 
   <!-- Contact Body Section -->
-  <section style="background-color: var(--bg-light);">
+  <section class="textured-bg">
     <div class="container">
       <div class="responsive-grid-contact">
         
         <!-- Left Side: Address & Map Details -->
-        <div style="display: flex; flex-direction: column; gap: 2.5rem;">
+        <div style="display: flex; flex-direction: column; gap: 2.5rem;" class="animate-float">
           <div>
             <h2 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 2rem;">Kantor Kami</h2>
             <p style="margin-bottom: 2rem; font-size: 1.05rem; color: var(--text-dark-muted);">
@@ -172,7 +172,9 @@ import Button from '../components/Button.astro';
         </div>
 
         <!-- Right Side: Contact Form -->
-        <ContactForm />
+        <div class="animate-float-delayed">
+          <ContactForm />
+        </div>
 
       </div>
     </div>

@@ -570,3 +570,100 @@ textarea.form-control {
     text-align: center;
   }
 }
+
+/* --- Creative Design Enhancements --- */
+
+/* Gold color variables and utilities */
+:root {
+  --accent-gold-premium: #c5a059; /* Elegant metallic gold */
+  --accent-gold-glow: rgba(197, 160, 89, 0.15);
+}
+
+.gold-text {
+  color: var(--accent-gold-premium) !important;
+  font-weight: 700;
+}
+
+/* Custom Textures */
+.textured-bg {
+  position: relative;
+  background-color: #080808;
+  /* Dark textured noise and subtle diagonal line pattern */
+  background-image: 
+    radial-gradient(var(--accent-gold-glow) 1px, transparent 0),
+    linear-gradient(rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+  background-size: 24px 24px, 40px 40px, 40px 40px;
+}
+
+/* Micro-Animations & Motion */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes gold-glow-pulse {
+  0% {
+    box-shadow: 0 0 5px var(--accent-gold-glow);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(197, 160, 89, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--accent-gold-glow);
+  }
+}
+
+@keyframes gold-shine-line {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+
+/* Class to trigger floating motion */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Glowing class for gold accents */
+.glow-gold-pulse {
+  animation: gold-glow-pulse 3s ease-in-out infinite;
+}
+
+/* Shine overlay effect for premium cards */
+.gold-shine-corner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold-premium), transparent);
+  animation: gold-shine-line 4s linear infinite;
+}
+
+/* Team card specific hover effect */
+.team-card-item:hover {
+  border-color: var(--accent-gold-premium) !important;
+  box-shadow: 0 10px 25px rgba(197, 160, 89, 0.15) !important;
+}
+
+.team-card-item:hover .avatar-container {
+  border-color: var(--accent-gold-premium) !important;
+  transform: scale(1.05);
+}
+

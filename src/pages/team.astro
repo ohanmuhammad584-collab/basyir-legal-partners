@@ -2,9 +2,100 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import TeamCard from '../components/TeamCard.astro';
 import Button from '../components/Button.astro';
+
+const lawyers = [
+  {
+    name: "Dr. Ohan M Basyir, S.H., M.H.",
+    role: "Founder & Managing Partner",
+    specialty: "Hukum Pengadilan Agama",
+    email: "albasyir140@gmail.com",
+    phone: "082117890656",
+    nip: "1253010112",
+    image: "/images/lawyer1.png",
+    description: "Merupakan pendiri utama Legal Cortex dengan dedikasi tinggi membantu klien menyelesaikan perkara perceraian dan hak asuh anak secara cepat, empatik, dan berpihak pada kemaslahatan keluarga.",
+    id: "lawyer-1"
+  },
+  {
+    name: "Prof. Dr. Ananda Rizky Saputra, LC., S.H.",
+    role: "Senior Partner / Head of Sharia Division",
+    specialty: "Hukum Pengadilan Agama & Litigasi Syariah",
+    email: "Kyza0620@gmail.com",
+    phone: "082251519903",
+    nip: "1253010076",
+    image: "/images/lawyer2.png",
+    description: "Guru besar hukum Islam yang memiliki spesialisasi mendalam dalam menyelesaikan perkara pembagian waris sharia (Faraid), hibah, dan sengketa warisan keluarga melalui litigasi maupun mediasi.",
+    id: "lawyer-2"
+  },
+  {
+    name: "KH. Mh. Danial Fahad, S.H., S.Pd., S.E., M.Si.",
+    role: "Senior Partner / Tax & Corporate Law Expert",
+    specialty: "Hukum Transaksi & Pajak",
+    email: "danielfhd004@gmail.com",
+    phone: "082319431159",
+    nip: "1253010104",
+    image: "/images/lawyer3.png",
+    description: "Ahli dalam merancang struktur transaksi bisnis yang efisien, memberikan analisis strategis antara opsi pembelian saham atau pembelian aset demi meminimalisir beban pajak korporasi secara legal.",
+    id: "lawyer-3"
+  },
+  {
+    name: "dr. Cindy Rahmawati, Sp.Rad., S.H., M.Kn.",
+    role: "Partner / Medical & Employment Law Specialist",
+    specialty: "Hukum Ketenagakerjaan",
+    email: "rahmawaticindy049@gmail.com",
+    phone: "085803133137",
+    nip: "1253010083",
+    image: "/images/lawyer4.png",
+    description: "Memadukan keahlian kedokteran dan hukum untuk memimpin divisi ketenagakerjaan, khusus menangani audit kontrak kerja, sengketa hubungan industrial (PHI), PHK, serta perlindungan hak pekerja.",
+    id: "lawyer-4"
+  },
+  {
+    name: "Prof. Nurria Raifa Faddillah, S.H., LL.M., Ph.D.",
+    role: "Partner / Head of International Relations",
+    specialty: "Hukum Perdata Internasional & Bisnis",
+    email: "nurriaraifaaa@gmail.com",
+    phone: "081223004804",
+    nip: "1253010071",
+    image: "/images/lawyer5.png",
+    description: "Berpengalaman dalam mendampingi korporasi global untuk memproteksi rahasia dagang, formula produk rahasia, lisensi merek internasional, serta menyelesaikan sengketa lintas negara.",
+    id: "lawyer-5"
+  },
+  {
+    name: "Prof. Dr. Salsabila Oktaviani, S.H., M.H., LL.M.",
+    role: "Partner / IP Protection Specialist",
+    specialty: "Hak Kekayaan Intelektual (HKI)",
+    email: "salsabilaoktaviani200@gmail.com",
+    phone: "08818369868",
+    nip: "1253010080",
+    image: "/images/lawyer6.png",
+    description: "Menyediakan pendampingan pendaftaran dan advokasi pelanggaran hak cipta, merek dagang, paten, desain industri, demi melindungi hak eksklusif dan nilai komersial karya para pelaku usaha.",
+    id: "lawyer-6"
+  },
+  {
+    name: "KH. Prof. Dr. Rajif Kamaludin, S.H., M.H., LC.",
+    role: "Senior Counsel & Family Law Arbitrator",
+    specialty: "Hukum Keluarga Islam & Mediasi",
+    email: "rajifkamal05@gmail.com",
+    phone: "083870787291",
+    nip: "1253010057",
+    image: "/images/lawyer7.png",
+    description: "Spesialis dalam penyelesaian sengketa keluarga melalui mediasi maupun litigasi di Pengadilan Agama, meliputi perkawinan, perceraian, hak asuh anak (hadhanah), nafkah, dan gono-gini berdasarkan KHI.",
+    id: "lawyer-7"
+  },
+  {
+    name: "M. Faiz Hibatullah Nugraha, S.H., M.H., M.Kn., Ph.D., CLA, CIAP, FCIArb",
+    role: "Senior Litigation Partner",
+    specialty: "Litigasi & Penyelesaian Sengketa",
+    email: "batullahfaiz@gmail.com",
+    phone: "085756290593",
+    nip: "1253010098",
+    image: "/images/lawyer8.png",
+    description: "Praktisi hukum senior dengan jam terbang lebih dari 15 tahun dalam arbitrase nasional/internasional, sertifikasi dokumen penting, konstruksi, perbankan, serta penanganan kasus komersial bernilai tinggi.",
+    id: "lawyer-8"
+  }
+];
 ---
 
-<MainLayout title="Tim Pengacara" activePage="team" description="Profil pengacara dan partner hukum utama di Basyir Legal Partners Sumedang. Didukung oleh praktisi hukum berpengalaman, ahli, dan berintegritas.">
+<MainLayout title="Tim Pengacara" activePage="team" description="Profil pengacara dan partner hukum utama di Legal Cortex. Didukung oleh praktisi hukum berpengalaman, ahli, dan berintegritas.">
   <!-- Page Header -->
   <section style="background: var(--dark-gradient); color: var(--text-light); padding: 5rem 0; border-bottom: 1px solid var(--border-color);">
     <div class="glow-mesh glow-mesh-1" style="opacity: 0.3;"></div>
@@ -20,71 +111,19 @@ import Button from '../components/Button.astro';
     <div class="container">
       <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
         
-        <!-- Lawyer 1 -->
-        <TeamCard 
-          name="Adrian Baskara, S.H., LL.M." 
-          role="Managing Partner" 
-          specialty="Hukum Korporasi & M&A" 
-          email="adrian@basyirlegal.id" 
-          initials="AB"
-          description="Spesialis transaksi bisnis internasional, merger, akuisisi, kepatuhan regulasi korporasi, serta penyusunan kontrak dagang multinasional dengan pengalaman 15 tahun."
-          id="lawyer-adrian"
-        />
-
-        <!-- Lawyer 2 -->
-        <TeamCard 
-          name="Kirana Wijaya, S.H., M.H." 
-          role="Senior Partner" 
-          specialty="Litigasi & Penyelesaian Perkara" 
-          email="kirana@basyirlegal.id" 
-          initials="KW"
-          description="Advokat litigasi senior berpengalaman memimpin persidangan perdata umum, sengketa wanprestasi, perkara pidana, serta mediasi sengketa di luar pengadilan."
-          id="lawyer-kirana"
-        />
-
-        <!-- Lawyer 3 -->
-        <TeamCard 
-          name="David Chen, S.H., LL.M." 
-          role="Partner" 
-          specialty="Hak Kekayaan Intelektual & Teknologi" 
-          email="david@basyirlegal.id" 
-          initials="DC"
-          description="Melindungi hak paten, cipta, merek dagang, rahasia dagang, lisensi waralaba, serta mengurus kepatuhan hukum transaksi elektronik dan industri kreatif."
-          id="lawyer-david"
-        />
-
-        <!-- Lawyer 4 -->
-        <TeamCard 
-          name="H. Ahmad Basyir, S.H., M.Sy." 
-          role="Senior Consultant" 
-          specialty="Hukum Syariah & Waris Islam" 
-          email="ahmad@basyirlegal.id" 
-          initials="HAB"
-          description="Pakar hukum syariah Islam dengan keahlian mendalam dalam memediasi pembagian harta waris (Faraid), hibah, wakaf, dan kepatuhan transaksi ekonomi syariah."
-          id="lawyer-ahmad"
-        />
-
-        <!-- Lawyer 5 -->
-        <TeamCard 
-          name="Rania Salsabila, S.H., M.H." 
-          role="Associate Lawyer" 
-          specialty="Hukum Pengadilan Agama" 
-          email="rania@basyirlegal.id" 
-          initials="RS"
-          description="Secara khusus menangani perkara cerai gugat/talak, sengketa hak asuh anak (hadhanah), nafkah istri/anak bulanan, serta gono-gini secara empati, taktis, dan tuntas."
-          id="lawyer-rania"
-        />
-
-        <!-- Lawyer 6 -->
-        <TeamCard 
-          name="Bambang Pratama, S.H." 
-          role="Associate Lawyer" 
-          specialty="Ketenagakerjaan & Kriminal" 
-          email="bambang@basyirlegal.id" 
-          initials="BP"
-          description="Berpengalaman mendampingi perselisihan hubungan industrial, penyusunan PKB, audit kepatuhan ketenagakerjaan, serta pembelaan hukum perkara pidana umum."
-          id="lawyer-bambang"
-        />
+        {lawyers.map(lawyer => (
+          <TeamCard 
+            name={lawyer.name}
+            role={lawyer.role}
+            specialty={lawyer.specialty}
+            email={lawyer.email}
+            phone={lawyer.phone}
+            nip={lawyer.nip}
+            image={lawyer.image}
+            description={lawyer.description}
+            id={lawyer.id}
+          />
+        ))}
 
       </div>
     </div>

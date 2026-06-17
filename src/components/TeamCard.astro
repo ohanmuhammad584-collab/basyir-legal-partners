@@ -4,67 +4,106 @@ interface Props {
   role: string;
   specialty: string;
   email: string;
-  initials: string;
-  description?: string;
+  phone: string;
+  nip: string;
+  image: string;
+  description: string;
   id?: string;
 }
 
-const { name, role, specialty, email, initials, description, id } = Astro.props;
+const { name, role, specialty, email, phone, nip, image, description, id } = Astro.props;
+
+// Format phone for WA link: strip spaces, dashes, leading 0 to 62
+const cleanPhone = phone.replace(/[^0-9]/g, '');
+const waPhone = cleanPhone.startsWith('0') ? '62' + cleanPhone.substring(1) : cleanPhone;
 ---
 
-<div class="card" id={id} style="padding: 2.25rem 2rem; align-items: center; text-align: center;">
-  <!-- Premium Avatar Placeholder using Gradient -->
+<div class="card team-card-item" id={id} style="padding: 2.5rem 2rem; align-items: center; text-align: center; border-color: var(--border-color); position: relative; overflow: hidden; height: 100%;">
+  <!-- Gold Shine Visual Effect Corner -->
+  <div class="gold-shine-corner"></div>
+
+  <!-- Avatar Container with Animated Gold/Red Border -->
   <div style="
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
     border-radius: var(--radius-full);
-    background: var(--violet-gradient);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
     box-shadow: var(--shadow-colored);
-    border: 4px solid var(--bg-light-card);
+    border: 3px solid var(--secondary-violet);
     position: relative;
     overflow: hidden;
-  ">
-    <!-- Visual pattern overlay -->
+    transition: var(--transition-smooth);
+  " class="avatar-container">
+    <!-- Image -->
+    <img 
+      src={image} 
+      alt={name} 
+      style="width: 100%; height: 100%; object-fit: cover; transition: var(--transition-smooth);" 
+      class="avatar-img"
+    />
+    <!-- Subtle overlay grid texture on image -->
     <div style="
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 0.15;
-      background-image: radial-gradient(circle, white 10%, transparent 10%);
-      background-size: 12px 12px;
+      top: 0; left: 0; right: 0; bottom: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(220, 38, 38, 0.05) 1px, transparent 0);
+      background-size: 8px 8px;
+      opacity: 0.4;
     "></div>
-    <span style="
-      font-size: 2.25rem;
-      font-weight: 800;
-      color: var(--text-light);
-      z-index: 1;
-      letter-spacing: 0.05em;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.15);
-    ">{initials}</span>
   </div>
 
-  <span class="badge" style="margin-bottom: 0.75rem; font-size: 0.75rem; align-self: center;">{role}</span>
+  <!-- Role Badge -->
+  <span class="badge" style="margin-bottom: 0.75rem; font-size: 0.75rem; align-self: center; background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light); border: 1px solid rgba(220, 38, 38, 0.2);">
+    {role}
+  </span>
   
-  <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--primary-indigo);">{name}</h3>
+  <!-- Name and NIP -->
+  <h3 style="font-size: 1.3rem; margin-bottom: 0.25rem; color: var(--text-light); line-height: 1.3;">{name}</h3>
+  <span style="font-size: 0.75rem; color: var(--text-dark-muted); display: block; margin-bottom: 0.75rem; font-family: monospace;">
+    NIP/NIK: {nip}
+  </span>
   
-  <p style="font-size: 0.9rem; font-weight: 600; color: var(--secondary-violet); margin-bottom: 1rem;">
+  <!-- Specialty -->
+  <p style="font-size: 0.85rem; font-weight: 700; color: var(--secondary-violet-light); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; min-height: 2.4rem; display: flex; align-items: center; justify-content: center;">
     {specialty}
   </p>
   
-  <p style="font-size: 0.9rem; color: var(--text-dark-muted); margin-bottom: 1.5rem; flex-grow: 1; line-height: 1.5;">
-    {description || "Menghadirkan keahlian hukum terfokus untuk membantu memandu keputusan hukum strategis klien kami."}
+  <!-- Description -->
+  <p style="font-size: 0.9rem; color: var(--text-dark-muted); margin-bottom: 2rem; flex-grow: 1; line-height: 1.6; text-align: justify; text-align-last: center;">
+    {description}
   </p>
 
-  <a href={`mailto:${email}`} class="btn btn-secondary btn-sm" style="width: 100%; border-color: rgba(220, 38, 38, 0.3);" id={`email-${initials.toLowerCase()}`}>
-    <svg style="width: 0.9rem; height: 0.9rem; fill: currentColor; margin-right: 0.35rem;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-    </svg>
-    Hubungi Pengacara
-  </a>
+  <!-- Dual Action Buttons: WA & Email -->
+  <div style="display: flex; gap: 0.75rem; width: 100%; margin-top: auto;">
+    <!-- WhatsApp Link Button -->
+    <a 
+      href={`https://wa.me/${waPhone}?text=${encodeURIComponent('Halo ' + name + ' dari Legal Cortex, saya ingin berkonsultasi mengenai kasus hukum.')}`}
+      target="_blank" 
+      rel="noopener noreferrer" 
+      class="btn btn-secondary btn-sm" 
+      style="flex: 1; border-color: rgba(34, 197, 94, 0.3); color: #22c55e; display: flex; align-items: center; justify-content: center; gap: 0.35rem; padding: 0.6rem 0.5rem;"
+      id={`wa-btn-${cleanPhone}`}
+    >
+      <svg style="width: 1rem; height: 1rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.177 8.177 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-1.57-.79-2.55-1.45-3.56-3.19-.27-.45-.03-.7.2-1.01.2-.28.45-.53.68-.8.23-.26.3-.45.45-.75.15-.3.07-.56-.04-.81-.11-.25-.56-1.35-.78-1.87-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.45.06-.69.32-.24.25-.92.9-1.02 2.2-.1 1.3.83 2.56.95 2.72.12.17 1.83 2.79 4.43 3.92.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.28z"/>
+      </svg>
+      WA
+    </a>
+
+    <!-- Email Link Button -->
+    <a 
+      href={`mailto:${email}?subject=Konsultasi Hukum - Legal Cortex`}
+      class="btn btn-secondary btn-sm" 
+      style="flex: 1; border-color: rgba(220, 38, 38, 0.3); color: var(--secondary-violet-light); display: flex; align-items: center; justify-content: center; gap: 0.35rem; padding: 0.6rem 0.5rem;"
+      id={`email-btn-${nip}`}
+    >
+      <svg style="width: 1rem; height: 1rem; fill: currentColor;" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+      </svg>
+      Email
+    </a>
+  </div>
 </div>
