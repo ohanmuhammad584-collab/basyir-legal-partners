@@ -156,7 +156,213 @@ import Button from '../components/Button.astro';
       <div style="text-align: center; max-width: 700px; margin: 0 auto 4rem auto;">
         <span class="badge" style="align-self: center;">Hasil & Rekam Jejak</span>
         <h2 style="color: var(--text-light); margin-bottom: 1rem;">Bukti Penyelesaian Kasus Sukses</h2>
-        <p style="color: var(--text-dark-muted);">Komitmen kami nyata. Berikut adalah data dan contoh penyelesaian perkara hukum krusial yang berhasil kami tangani dengan kepuasan penuh bagi klien.</p>
+        <p style="color: var(--text-dark-muted);">Komitmen kami nyata. Klik setiap kartu untuk melihat detail arsip penyelesaian perkara.</p>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 4rem; text-align: center;">
+        <div class="card" style="padding: 2.5rem 2rem; border-color: var(--border-color); align-items: center;">
+          <span style="font-size: 3.5rem; font-weight: 800; color: var(--secondary-violet); display: block; margin-bottom: 0.5rem; line-height: 1;">98%</span>
+          <h4 style="color: var(--text-light); margin-bottom: 0.5rem; font-size: 1.1rem;">Kasus Sukses</h4>
+          <p style="font-size: 0.85rem; color: var(--text-dark-muted); line-height: 1.4;">Tingkat keberhasilan penyelesaian hukum memuaskan.</p>
+        </div>
+        <div class="card" style="padding: 2.5rem 2rem; border-color: var(--border-color); align-items: center;">
+          <span style="font-size: 3.5rem; font-weight: 800; color: var(--secondary-violet); display: block; margin-bottom: 0.5rem; line-height: 1;">150+</span>
+          <h4 style="color: var(--text-light); margin-bottom: 0.5rem; font-size: 1.1rem;">Kasus Selesai</h4>
+          <p style="font-size: 0.85rem; color: var(--text-dark-muted); line-height: 1.4;">Perkara Pengadilan Agama & Perdata berhasil diselesaikan.</p>
+        </div>
+        <div class="card" style="padding: 2.5rem 2rem; border-color: var(--border-color); align-items: center;">
+          <span style="font-size: 3.5rem; font-weight: 800; color: var(--secondary-violet); display: block; margin-bottom: 0.5rem; line-height: 1;">Rp 50M+</span>
+          <h4 style="color: var(--text-light); margin-bottom: 0.5rem; font-size: 1.1rem;">Aset Terlindungi</h4>
+          <p style="font-size: 0.85rem; color: var(--text-dark-muted); line-height: 1.4;">Hak waris & harta bersama (gono-gini) berhasil diamankan.</p>
+        </div>
+      </div>
+
+      <!-- Asset Gallery -->
+      <div style="text-align: center; margin-bottom: 1.5rem;">
+        <h3 style="color: var(--accent-gold-premium); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem;">Portofolio Aset yang Berhasil Dilindungi</h3>
+        <p style="color: var(--text-dark-muted); font-size: 0.9rem;">Contoh aset klien yang berhasil diamankan melalui proses hukum kami.</p>
+      </div>
+      <div class="asset-gallery">
+        <div class="asset-card">
+          <img src="/images/asset-office.png" alt="Ruko Komersial Jatinangor" loading="lazy" />
+          <div class="asset-card-info">
+            <h4>Ruko Komersial — Jatinangor</h4>
+            <p>Sengketa Waris • Rp 1.8 M • 2024</p>
+          </div>
+        </div>
+        <div class="asset-card">
+          <img src="/images/asset-house.png" alt="Rumah Tinggal Sumedang" loading="lazy" />
+          <div class="asset-card-info">
+            <h4>Rumah Tinggal — Sumedang Selatan</h4>
+            <p>Harta Gono-Gini • Rp 2.1 M • 2025</p>
+          </div>
+        </div>
+        <div class="asset-card">
+          <img src="/images/asset-land.png" alt="Lahan Pertanian Ujungjaya" loading="lazy" />
+          <div class="asset-card-info">
+            <h4>Lahan Pertanian — Ujungjaya</h4>
+            <p>Sertifikat Tanah • Rp 950 Jt • 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Studies List (Clickable) -->
+      <div class="card-grid" style="margin-top: 4rem;">
+        <!-- Case 1 -->
+        <div class="card case-clickable" data-case="1" style="border-color: var(--border-color); position: relative; overflow: hidden; padding: 2.25rem 2rem;">
+          <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light); font-size: 0.75rem; margin-bottom: 1.25rem;">Pengadilan Agama Sumedang</span>
+          <h3 style="margin-bottom: 1rem; color: var(--text-light); font-size: 1.35rem; line-height: 1.3;">Penyelesaian Hak Asuh & Nafkah Anak</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-dark-muted); margin-bottom: 2rem; flex-grow: 1;">Berhasil memenangkan hak asuh penuh atas dua anak bagi klien serta menetapkan nafkah bulanan yang memadai pasca-perceraian.</p>
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--secondary-violet); display: flex; align-items: center; gap: 0.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem; width: 100%;">
+            <svg style="width: 1.1rem; height: 1.1rem; fill: currentColor; flex-shrink: 0;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Klik untuk Lihat Detail Arsip</span>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="card case-clickable" data-case="2" style="border-color: var(--border-color); position: relative; overflow: hidden; padding: 2.25rem 2rem;">
+          <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light); font-size: 0.75rem; margin-bottom: 1.25rem;">Mediasi Sengketa Waris</span>
+          <h3 style="margin-bottom: 1rem; color: var(--text-light); font-size: 1.35rem; line-height: 1.3;">Pembagian Warisan Tanah & Ruko</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-dark-muted); margin-bottom: 2rem; flex-grow: 1;">Menyelesaikan sengketa warisan keluarga senilai Rp 3.2 Milyar melalui mediasi damai secara kekeluargaan.</p>
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--secondary-violet); display: flex; align-items: center; gap: 0.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem; width: 100%;">
+            <svg style="width: 1.1rem; height: 1.1rem; fill: currentColor; flex-shrink: 0;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Klik untuk Lihat Detail Arsip</span>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="card case-clickable" data-case="3" style="border-color: var(--border-color); position: relative; overflow: hidden; padding: 2.25rem 2rem;">
+          <span class="badge" style="background-color: rgba(220, 38, 38, 0.15); color: var(--secondary-violet-light); font-size: 0.75rem; margin-bottom: 1.25rem;">Gugatan Harta Bersama</span>
+          <h3 style="margin-bottom: 1rem; color: var(--text-light); font-size: 1.35rem; line-height: 1.3;">Penyelamatan Aset Gono-Gini</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-dark-muted); margin-bottom: 2rem; flex-grow: 1;">Mengamankan ruko operasional usaha dan tabungan bersama senilai ratusan juta rupiah yang diklaim sepihak oleh pihak lawan.</p>
+          <div style="font-size: 0.85rem; font-weight: 700; color: var(--secondary-violet); display: flex; align-items: center; gap: 0.5rem; border-top: 1px solid var(--border-color); padding-top: 1rem; width: 100%;">
+            <svg style="width: 1.1rem; height: 1.1rem; fill: currentColor; flex-shrink: 0;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            <span>Klik untuk Lihat Detail Arsip</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Archive Modal -->
+  <div class="case-modal-overlay" id="caseModal">
+    <div class="case-modal">
+      <button class="case-modal-close" id="caseModalClose">&times;</button>
+      <span class="case-archive-number" id="modalArchiveNo"></span>
+      <h3 class="case-modal-title" id="modalTitle"></h3>
+      
+      <div style="border-top: 1px solid rgba(197, 160, 89, 0.2); padding-top: 1.5rem; margin-top: 0.5rem;">
+        <div class="case-detail-row">
+          <span class="case-detail-label">Klien</span>
+          <span class="case-detail-value" id="modalClient"></span>
+        </div>
+        <div class="case-detail-row">
+          <span class="case-detail-label">Masalah</span>
+          <span class="case-detail-value" id="modalProblem"></span>
+        </div>
+        <div class="case-detail-row">
+          <span class="case-detail-label">Strategi</span>
+          <span class="case-detail-value" id="modalStrategy"></span>
+        </div>
+        <div class="case-detail-row">
+          <span class="case-detail-label">Hasil</span>
+          <span class="case-detail-value" id="modalResult" style="color: #22c55e; font-weight: 700;"></span>
+        </div>
+        <div class="case-detail-row">
+          <span class="case-detail-label">Advokat</span>
+          <span class="case-detail-value" id="modalLawyer" style="color: var(--accent-gold-premium); font-weight: 600;"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <section style="background: var(--indigo-gradient); color: var(--text-light); text-align: center; padding: 6.5rem 0; border-top: 1px solid var(--border-color);">
+    <div class="container">
+      <div style="max-width: 750px; margin: 0 auto;">
+        <h2 style="color: var(--text-light); margin-bottom: 1.5rem; font-size: 2.25rem;">Selesaikan Permasalahan Hukum Anda Hari Ini</h2>
+        <p style="color: var(--text-light-muted); margin-bottom: 2.5rem; font-size: 1.1rem; line-height: 1.6;">
+          Tunda kekhawatiran Anda. Konsultasikan kasus Anda secara privat dengan advokat ahli kami guna menyusun strategi hukum yang kokoh.
+        </p>
+        <Button href="/contact" variant="primary" style="background: var(--violet-gradient); color: #ffffff; box-shadow: 0 15px 30px rgba(220, 38, 38, 0.25);" id="cta-contact-btn">
+          Hubungi Kami via WhatsApp
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Modal Script -->
+  <script>
+    const caseData = {
+      1: {
+        archiveNo: "LC/2025/PA-042",
+        title: "Penyelesaian Hak Asuh & Nafkah Anak",
+        client: "Ibu R.S. (34 tahun, ibu rumah tangga, Sumedang Selatan)",
+        problem: "Klien mengajukan cerai gugat terhadap suami yang melalaikan kewajiban nafkah selama 2 tahun dan melakukan kekerasan verbal. Suami menolak memberikan hak asuh kedua anak (usia 4 dan 7 tahun) serta menuntut pembagian harta gono-gini secara sepihak.",
+        strategy: "Tim Legal Cortex menyusun gugatan cerai beserta permohonan hak asuh (hadhanah) bersamaan. Bukti-bukti penelantaran nafkah, catatan KDRT dari laporan RT/RW, serta saksi tetangga dipersiapkan secara rinci. Mediasi pertama gagal, namun di persidangan berhasil dibuktikan bahwa klien lebih layak memegang hak asuh berdasarkan usia anak dan kedekatan emosional.",
+        result: "Gugatan dikabulkan penuh. Hak asuh kedua anak jatuh kepada klien. Mantan suami diwajibkan membayar nafkah anak Rp 3.500.000/bulan + biaya pendidikan. Putusan telah inkrah.",
+        lawyer: "Dr. Ohan M Basyir, S.H., M.H. — Founder & Managing Partner"
+      },
+      2: {
+        archiveNo: "LC/2024/MED-018",
+        title: "Pembagian Warisan Tanah & Ruko Keluarga",
+        client: "Bpk. D.K. & Keluarga (7 ahli waris, Jatinangor)",
+        problem: "Almarhum pemilik aset meninggalkan 3 bidang tanah (total 2.400 m²), 2 unit ruko di Jatinangor, dan tabungan sebesar Rp 480 juta, tanpa wasiat. Perselisihan muncul karena 2 ahli waris menguasai sertifikat secara sepihak dan menolak membagi warisan sesuai porsi hukum Islam (faraid).",
+        strategy: "Legal Cortex melakukan inventarisasi lengkap terhadap seluruh aset warisan. Kami memfasilitasi mediasi 3 putaran dengan seluruh ahli waris, menggunakan perhitungan faraid yang presisi. Setelah putaran kedua, kami menyusun draft Akta Perdamaian yang disepakati oleh seluruh pihak.",
+        result: "Kesepakatan damai tercapai tanpa sidang pengadilan. Seluruh aset senilai Rp 3.2 Milyar berhasil dibagi sesuai hukum faraid. Akta Perdamaian disahkan oleh Pengadilan Agama. Hubungan keluarga tetap terjaga baik.",
+        lawyer: "Prof. Dr. Ananda Rizky Saputra, LC., S.H. — Head of Sharia Division"
+      },
+      3: {
+        archiveNo: "LC/2025/HB-007",
+        title: "Penyelamatan Aset Gono-Gini dari Klaim Sepihak",
+        client: "Ibu M.A. (41 tahun, pengusaha UMKM, Sumedang Utara)",
+        problem: "Setelah perceraian, mantan suami klien mengklaim kepemilikan penuh atas 1 unit ruko (senilai Rp 780 juta) yang merupakan tempat usaha klien, serta tabungan bersama Rp 320 juta di rekening atas nama suami. Mantan suami mengancam mengusir klien dari ruko tersebut.",
+        strategy: "Tim kami mengumpulkan bukti-bukti kontribusi klien terhadap perolehan aset selama perkawinan, termasuk: dokumen pendirian usaha, mutasi rekening, bukti pembayaran cicilan ruko dari hasil usaha klien, serta kesaksian karyawan toko. Kami mengajukan gugatan harta bersama ke Pengadilan Agama Sumedang.",
+        result: "Hakim mengabulkan gugatan klien. Ruko ditetapkan sebagai harta bersama dan bagian klien dijamin. Tabungan Rp 320 juta dibagi 50:50. Klien dapat tetap menjalankan usahanya tanpa gangguan. Total aset yang berhasil diamankan: Rp 710 juta.",
+        lawyer: "KH. Prof. Dr. Rajif Kamaludin, S.H., M.H., LC. — Senior Counsel"
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const modal = document.getElementById('caseModal');
+      const closeBtn = document.getElementById('caseModalClose');
+      
+      document.querySelectorAll('.case-clickable').forEach(card => {
+        card.addEventListener('click', () => {
+          const id = card.dataset.case;
+          const data = caseData[id];
+          if (!data) return;
+          
+          document.getElementById('modalArchiveNo').textContent = '📁 Arsip No. ' + data.archiveNo;
+          document.getElementById('modalTitle').textContent = data.title;
+          document.getElementById('modalClient').textContent = data.client;
+          document.getElementById('modalProblem').textContent = data.problem;
+          document.getElementById('modalStrategy').textContent = data.strategy;
+          document.getElementById('modalResult').textContent = data.result;
+          document.getElementById('modalLawyer').textContent = data.lawyer;
+          
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+      
+      function closeModal() {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+      });
+    });
+  </script>
+</MainLayout>
+
       </div>
 
       <!-- Stats Grid -->

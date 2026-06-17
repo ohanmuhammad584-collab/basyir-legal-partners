@@ -8,10 +8,11 @@ interface Props {
   nip: string;
   image: string;
   description: string;
+  education?: string;
   id?: string;
 }
 
-const { name, role, specialty, email, phone, nip, image, description, id } = Astro.props;
+const { name, role, specialty, email, phone, nip, image, description, education, id } = Astro.props;
 
 // Format phone for WA link: strip spaces, dashes, leading 0 to 62
 const cleanPhone = phone.replace(/[^0-9]/g, '');
@@ -67,9 +68,20 @@ const waPhone = cleanPhone.startsWith('0') ? '62' + cleanPhone.substring(1) : cl
   </span>
   
   <!-- Specialty -->
-  <p style="font-size: 0.85rem; font-weight: 700; color: var(--secondary-violet-light); margin-bottom: 1.25rem; text-transform: uppercase; letter-spacing: 0.05em; min-height: 2.4rem; display: flex; align-items: center; justify-content: center;">
+  <p style="font-size: 0.85rem; font-weight: 700; color: var(--secondary-violet-light); margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; min-height: 2.4rem; display: flex; align-items: center; justify-content: center;">
     {specialty}
   </p>
+
+  <!-- Education -->
+  {education && (
+    <div style="font-size: 0.8rem; color: var(--accent-gold-premium); margin-bottom: 1.25rem; line-height: 1.5; padding: 0.5rem; background: rgba(197, 160, 89, 0.05); border-radius: var(--radius-sm); border: 1px dashed rgba(197, 160, 89, 0.3);">
+      <div style="display: flex; justify-content: center; margin-bottom: 0.25rem;">
+        <svg style="width: 1rem; height: 1rem; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 14.72l5-2.45v3.72z"/></svg>
+      </div>
+      <span style="font-weight: 600; display: block; margin-bottom: 0.2rem;">Riwayat Pendidikan:</span>
+      <span style="font-style: italic;">{education}</span>
+    </div>
+  )}
   
   <!-- Description -->
   <p style="font-size: 0.9rem; color: var(--text-dark-muted); margin-bottom: 2rem; flex-grow: 1; line-height: 1.6; text-align: justify; text-align-last: center;">

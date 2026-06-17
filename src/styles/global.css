@@ -752,3 +752,185 @@ textarea.form-control {
   box-shadow: var(--shadow-sm) !important;
 }
 
+/* --- Service Card Accordion --- */
+.service-card-item .service-desc-wrapper.expanded {
+  max-height: 3000px !important;
+}
+
+.service-card-item .service-desc-wrapper.expanded .service-fade-overlay {
+  opacity: 0 !important;
+}
+
+.service-card-item .service-toggle-btn .toggle-chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* --- Case Archive Modal --- */
+.case-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+.case-modal-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.case-modal {
+  background: #111;
+  border: 1px solid var(--accent-gold-premium);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  max-width: 620px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(197, 160, 89, 0.15), 0 0 80px rgba(220, 38, 38, 0.08);
+  transform: translateY(30px) scale(0.96);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-modal-overlay.active .case-modal {
+  transform: translateY(0) scale(1);
+}
+
+.case-modal-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text-light-muted);
+  font-size: 1.5rem;
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.case-modal-close:hover {
+  border-color: var(--accent-gold-premium);
+  color: var(--accent-gold-premium);
+}
+
+.case-archive-number {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--accent-gold-premium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.case-modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.case-detail-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  align-items: flex-start;
+}
+
+.case-detail-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-gold-premium);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  min-width: 110px;
+  flex-shrink: 0;
+}
+
+.case-detail-value {
+  font-size: 0.95rem;
+  color: var(--text-dark-muted);
+  line-height: 1.6;
+}
+
+/* --- Asset Gallery --- */
+.asset-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .asset-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
+.asset-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.asset-card:hover {
+  border-color: var(--accent-gold-premium);
+  box-shadow: 0 10px 30px rgba(197, 160, 89, 0.15);
+  transform: translateY(-4px);
+}
+
+.asset-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.asset-card:hover img {
+  transform: scale(1.08);
+}
+
+.asset-card-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+}
+
+.asset-card-info h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 0.25rem;
+}
+
+.asset-card-info p {
+  font-size: 0.75rem;
+  color: var(--accent-gold-premium);
+}
+
+/* --- Clickable case card cursor --- */
+.case-clickable {
+  cursor: pointer;
+}
+
+.case-clickable:hover {
+  border-color: var(--accent-gold-premium) !important;
+  box-shadow: 0 15px 30px rgba(197, 160, 89, 0.15) !important;
+}

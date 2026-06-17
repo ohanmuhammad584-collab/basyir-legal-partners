@@ -4,20 +4,64 @@ interface Props {
   description?: string;
   id?: string;
   href?: string;
+  expertName?: string;
+  expertWa?: string;
+  expertId?: string;
 }
 
-const { title, description, id, href = "/contact" } = Astro.props;
+const { title, description, id, href = "/contact", expertName = "", expertWa = "", expertId = "" } = Astro.props;
+const waMessage = encodeURIComponent(`Halo ${expertName} dari Legal Cortex, saya ingin berkonsultasi mengenai ${title}.`);
 ---
 
-<div class="card" id={id} style="border-color: var(--border-color); display: flex; flex-direction: column;">
+<div class="card service-card-item" id={id} style="border-color: var(--border-color); display: flex; flex-direction: column; position: relative; overflow: hidden;">
+  <!-- Gold Shine Corner -->
+  <div class="gold-shine-corner"></div>
+  
   <div style="margin-bottom: 1.5rem; color: var(--secondary-violet);">
     <slot name="icon" />
   </div>
   <h3 style="margin-bottom: 1.5rem; color: var(--text-light); font-size: 1.75rem;">{title}</h3>
-  <div style="margin-bottom: 2rem; flex-grow: 1; font-size: 1.05rem; line-height: 1.8; color: var(--text-dark-muted);">
+  
+  <!-- Collapsible description wrapper -->
+  <div class="service-desc-wrapper" style="margin-bottom: 1.5rem; flex-grow: 1; font-size: 1.05rem; line-height: 1.8; color: var(--text-dark-muted); position: relative; max-height: 140px; overflow: hidden; transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);">
     {description ? <p>{description}</p> : <slot />}
+    <!-- Fade overlay -->
+    <div class="service-fade-overlay" style="position: absolute; bottom: 0; left: 0; right: 0; height: 60px; background: linear-gradient(to bottom, transparent, var(--bg-light-card)); pointer-events: none; transition: opacity 0.3s ease;"></div>
   </div>
-  <a href={href} class="btn btn-secondary btn-sm" style="align-self: flex-start; padding: 0.75rem 1.5rem; border-color: rgba(220, 38, 38, 0.3); color: var(--secondary-violet-light);">
-    Konsultasikan Kasus Ini
-  </a>
+  
+  <!-- Toggle Button -->
+  <button class="btn btn-sm service-toggle-btn" style="align-self: flex-start; margin-bottom: 1.5rem; border: 1px solid var(--accent-gold-premium); color: var(--accent-gold-premium); background: transparent; cursor: pointer; display: flex; align-items: center; gap: 0.5rem; font-weight: 700;" type="button">
+    <span class="toggle-text">Selengkapnya</span>
+    <svg class="toggle-chevron" style="width: 1rem; height: 1rem; fill: currentColor; transition: transform 0.3s ease;" viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6z"/></svg>
+  </button>
+  
+  <!-- Action Buttons -->
+  <div style="display: flex; gap: 0.75rem; width: 100%; margin-top: auto; flex-wrap: wrap;">
+    {expertWa ? (
+      <a 
+        href={`https://wa.me/${expertWa}?text=${waMessage}`}
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="btn btn-primary btn-sm" 
+        style="flex: 1; min-width: 140px; display: flex; align-items: center; justify-content: center; gap: 0.4rem;"
+      >
+        <svg style="width: 1rem; height: 1rem; fill: currentColor;" viewBox="0 0 24 24"><path d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01zm-7.01 15.24c-1.48 0-2.93-.4-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.217 8.217 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24 2.2 0 4.27.86 5.82 2.42a8.177 8.177 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-1.57-.79-2.55-1.45-3.56-3.19-.27-.45-.03-.7.2-1.01.2-.28.45-.53.68-.8.23-.26.3-.45.45-.75.15-.3.07-.56-.04-.81-.11-.25-.56-1.35-.78-1.87-.21-.51-.43-.44-.59-.45h-.5c-.17 0-.45.06-.69.32-.24.25-.92.9-1.02 2.2-.1 1.3.83 2.56.95 2.72.12.17 1.83 2.79 4.43 3.92.62.27 1.1.43 1.48.55.62.2 1.19.17 1.64.1.5-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+        Hubungi Ahli
+      </a>
+    ) : (
+      <a href={href} class="btn btn-secondary btn-sm" style="flex: 1; min-width: 140px; border-color: rgba(220, 38, 38, 0.3); color: var(--secondary-violet-light);">
+        Konsultasikan Kasus Ini
+      </a>
+    )}
+    {expertId && (
+      <a 
+        href={`/team#${expertId}`}
+        class="btn btn-sm" 
+        style="flex: 1; min-width: 120px; border: 1px solid var(--accent-gold-premium); color: var(--accent-gold-premium); background: transparent; display: flex; align-items: center; justify-content: center; gap: 0.4rem;"
+      >
+        <svg style="width: 1rem; height: 1rem; fill: currentColor;" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        Profil Ahli
+      </a>
+    )}
+  </div>
 </div>
