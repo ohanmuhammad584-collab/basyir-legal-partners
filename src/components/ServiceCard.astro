@@ -1,21 +1,23 @@
 ---
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   id?: string;
   href?: string;
 }
 
-const { title, description, id, href = "/practice-areas" } = Astro.props;
+const { title, description, id, href = "/contact" } = Astro.props;
 ---
 
-<div class="card" id={id}>
+<div class="card" id={id} style="border-color: var(--border-color); display: flex; flex-direction: column;">
   <div style="margin-bottom: 1.5rem; color: var(--secondary-violet);">
     <slot name="icon" />
   </div>
-  <h3 style="margin-bottom: 1rem; color: var(--primary-indigo);">{title}</h3>
-  <p style="margin-bottom: 2rem; flex-grow: 1; font-size: 0.95rem; line-height: 1.6;">{description}</p>
-  <a href={href} class="nav-link" style="align-self: flex-start; padding: 0; font-weight: 700; font-size: 0.9rem;">
-    Pelajari Selengkapnya &rarr;
+  <h3 style="margin-bottom: 1.5rem; color: var(--text-light); font-size: 1.75rem;">{title}</h3>
+  <div style="margin-bottom: 2rem; flex-grow: 1; font-size: 1.05rem; line-height: 1.8; color: var(--text-dark-muted);">
+    {description ? <p>{description}</p> : <slot />}
+  </div>
+  <a href={href} class="btn btn-secondary btn-sm" style="align-self: flex-start; padding: 0.75rem 1.5rem; border-color: rgba(220, 38, 38, 0.3); color: var(--secondary-violet-light);">
+    Konsultasikan Kasus Ini
   </a>
 </div>
