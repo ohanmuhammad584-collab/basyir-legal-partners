@@ -9,7 +9,7 @@ interface Props {
   expertId?: string;
 }
 
-const { title, description, id, href = "/contact", expertName = "", expertWa = "", expertId = "" } = Astro.props;
+const { title, description, id, href = "/konsultasi", expertName = "", expertWa = "", expertId = "" } = Astro.props;
 const waMessage = encodeURIComponent(`Halo ${expertName} dari Legal Cortex, saya ingin berkonsultasi mengenai ${title}.`);
 ---
 

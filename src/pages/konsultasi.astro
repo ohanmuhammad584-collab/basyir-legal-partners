@@ -1,0 +1,241 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+---
+
+<MainLayout title="Konsultasi Hukum AI" activePage="contact" description="Konsultasi permasalahan hukum Anda dengan Asisten AI Legal Cortex sebelum dihubungkan dengan pengacara spesialis kami.">
+  <section style="background: var(--dark-gradient); padding: 5rem 0 3rem; min-height: calc(100vh - 160px); display: flex; flex-direction: column;">
+    <div class="container" style="flex-grow: 1; display: flex; flex-direction: column; max-width: 900px;">
+      
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <span class="badge" style="background-color: rgba(197, 160, 89, 0.15); color: var(--accent-gold-premium);">Layanan Interaktif 24/7</span>
+        <h1 style="color: var(--text-light); font-size: 2.5rem; margin-bottom: 0.5rem;">Asisten Hukum Virtual</h1>
+        <p style="color: var(--text-light-muted);">Ceritakan permasalahan hukum Anda di bawah ini. Asisten kami akan merespons secara langsung dan merekomendasikan langkah terbaik.</p>
+      </div>
+
+      <div class="card" style="flex-grow: 1; display: flex; flex-direction: column; background: rgba(17, 17, 17, 0.8); border: 1px solid var(--border-color); padding: 0; overflow: hidden; height: 600px;">
+        
+        <!-- Chat Area -->
+        <div id="chat-messages" style="flex-grow: 1; padding: 1.5rem; overflow-y: auto; display: flex; flex-direction: column; gap: 1.5rem;">
+          
+          <!-- AI Welcome Message -->
+          <div class="chat-bubble ai-bubble" style="align-self: flex-start; background: rgba(197, 160, 89, 0.1); border: 1px solid rgba(197, 160, 89, 0.3); border-radius: 12px 12px 12px 0; padding: 1rem 1.5rem; max-width: 80%;">
+            <p style="color: var(--text-light); margin: 0; line-height: 1.6;">
+              Halo! Saya adalah Asisten Hukum Virtual Legal Cortex. Ada permasalahan hukum apa yang bisa saya bantu hari ini? 
+              <br><br>
+              <em style="font-size: 0.85em; color: var(--text-dark-muted);">*Sebagai catatan, saya memberikan informasi edukasi dasar. Untuk tindakan hukum yang mengikat, tim pengacara kami siap mendampingi Anda secara langsung.</em>
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Input Area -->
+        <div style="background: rgba(10, 10, 10, 0.95); padding: 1rem 1.5rem; border-top: 1px solid var(--border-color); display: flex; gap: 1rem; align-items: flex-end;">
+          <textarea 
+            id="chat-input" 
+            placeholder="Ketik pertanyaan atau jelaskan kasus Anda di sini..." 
+            rows="2"
+            style="flex-grow: 1; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-color); border-radius: 8px; padding: 0.75rem 1rem; color: var(--text-light); font-family: inherit; resize: none; outline: none; transition: var(--transition-smooth);"
+            onfocus="this.style.borderColor='var(--accent-gold-premium)'"
+            onblur="this.style.borderColor='var(--border-color)'"
+          ></textarea>
+          
+          <button id="chat-send-btn" class="btn btn-primary" style="height: 50px; width: 50px; padding: 0; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0;" aria-label="Kirim Pesan">
+            <svg style="width: 1.5rem; height: 1.5rem; fill: currentColor; margin-left: 4px;" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          </button>
+        </div>
+
+      </div>
+      
+      <!-- WA Direct CTA -->
+      <div style="text-align: center; margin-top: 2rem;">
+        <p style="color: var(--text-dark-muted); font-size: 0.9rem; margin-bottom: 1rem;">Butuh penanganan segera dari ahli hukum asli?</p>
+        <a href="https://wa.me/6282117890656" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="border-color: rgba(220, 38, 38, 0.4); color: var(--text-light);">
+          Lewati & Chat WhatsApp Sekarang
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <style>
+    /* Custom Scrollbar for Chat */
+    #chat-messages::-webkit-scrollbar {
+      width: 6px;
+    }
+    #chat-messages::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    #chat-messages::-webkit-scrollbar-thumb {
+      background: rgba(197, 160, 89, 0.3);
+      border-radius: 10px;
+    }
+    #chat-messages::-webkit-scrollbar-thumb:hover {
+      background: rgba(197, 160, 89, 0.5);
+    }
+    
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      padding: 0.5rem;
+    }
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent-gold-premium);
+      border-radius: 50%;
+      animation: typing 1.4s infinite ease-in-out;
+    }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing {
+      0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+      40% { transform: scale(1); opacity: 1; }
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const chatMessages = document.getElementById('chat-messages');
+      const chatInput = document.getElementById('chat-input') as HTMLTextAreaElement;
+      const sendBtn = document.getElementById('chat-send-btn');
+      
+      // Store chat history
+      let history: {role: string, text: string}[] = [];
+
+      function addMessage(text: string, isUser: boolean) {
+        if (!chatMessages) return;
+        
+        const bubble = document.createElement('div');
+        bubble.className = `chat-bubble ${isUser ? 'user-bubble' : 'ai-bubble'}`;
+        
+        // Styling based on sender
+        if (isUser) {
+          bubble.style.cssText = `
+            align-self: flex-end; 
+            background: linear-gradient(135deg, rgba(220, 38, 38, 0.2), rgba(220, 38, 38, 0.05)); 
+            border: 1px solid rgba(220, 38, 38, 0.4); 
+            border-radius: 12px 12px 0 12px; 
+            padding: 1rem 1.5rem; 
+            max-width: 80%;
+            color: var(--text-light);
+          `;
+        } else {
+          bubble.style.cssText = `
+            align-self: flex-start; 
+            background: rgba(197, 160, 89, 0.1); 
+            border: 1px solid rgba(197, 160, 89, 0.3); 
+            border-radius: 12px 12px 12px 0; 
+            padding: 1rem 1.5rem; 
+            max-width: 80%;
+            color: var(--text-light);
+            line-height: 1.6;
+          `;
+        }
+        
+        // Basic Markdown parsing for bold and line breaks
+        let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        formattedText = formattedText.replace(/\n/g, '<br>');
+        
+        bubble.innerHTML = `<p style="margin: 0;">${formattedText}</p>`;
+        chatMessages.appendChild(bubble);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        // Add to history
+        history.push({ role: isUser ? 'user' : 'ai', text: text });
+      }
+
+      function showTypingIndicator() {
+        if (!chatMessages) return null;
+        const bubble = document.createElement('div');
+        bubble.className = 'chat-bubble ai-bubble typing-wrapper';
+        bubble.style.cssText = `
+          align-self: flex-start; 
+          background: rgba(197, 160, 89, 0.05); 
+          border: 1px solid rgba(197, 160, 89, 0.1); 
+          border-radius: 12px 12px 12px 0; 
+          padding: 1rem;
+        `;
+        bubble.innerHTML = `
+          <div class="typing-indicator">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        `;
+        chatMessages.appendChild(bubble);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+        return bubble;
+      }
+
+      async function handleSend() {
+        if (!chatInput) return;
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        // Clear input and reset height
+        chatInput.value = '';
+        chatInput.style.height = 'auto';
+
+        // Add user message
+        addMessage(text, true);
+
+        // Show typing indicator
+        const typingIndicator = showTypingIndicator();
+
+        try {
+          const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+              message: text,
+              // Send last 10 messages for context
+              history: history.slice(-10)
+            })
+          });
+
+          const data = await response.json();
+          
+          if (typingIndicator) typingIndicator.remove();
+
+          if (data.reply) {
+            addMessage(data.reply, false);
+          } else if (data.error) {
+            addMessage(`⚠️ **Sistem Error:** ${data.error}`, false);
+          } else {
+            addMessage("Maaf, terjadi kesalahan yang tidak diketahui.", false);
+          }
+
+        } catch (error) {
+          if (typingIndicator) typingIndicator.remove();
+          addMessage("⚠️ Koneksi terputus. Pastikan internet Anda stabil atau langsung hubungi tim kami via WhatsApp.", false);
+          console.error(error);
+        }
+      }
+
+      // Event Listeners
+      if (sendBtn) {
+        sendBtn.addEventListener('click', handleSend);
+      }
+      
+      if (chatInput) {
+        chatInput.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            handleSend();
+          }
+        });
+        
+        // Auto-resize textarea
+        chatInput.addEventListener('input', function() {
+          this.style.height = 'auto';
+          this.style.height = (this.scrollHeight) + 'px';
+          if (this.scrollHeight > 150) {
+            this.style.overflowY = 'auto';
+          } else {
+            this.style.overflowY = 'hidden';
+          }
+        });
+      }
+    });
+  </script>
+</MainLayout>

@@ -12,6 +12,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.0.0",
+    "@google/genai": "^2.9.0",
     "astro": "^6.4.7"
   }
 }
