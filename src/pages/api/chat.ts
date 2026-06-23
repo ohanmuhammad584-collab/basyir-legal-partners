@@ -17,11 +17,11 @@ export const POST = async ({ request }) => {
     const apiKey = import.meta.env.GEMINI_API_KEY || process.env.GEMINI_API_KEY;
     
     if (!apiKey) {
+      // If no API key is provided, return a mock response instead of an error so the user sees it "running"
       return new Response(JSON.stringify({ 
-        error: 'API Key belum dikonfigurasi. Silakan tambahkan GEMINI_API_KEY di environment variables.',
-        requiresKey: true 
+        reply: "*(Mode Simulasi)* Halo! Saya Asisten Hukum Virtual dari Legal Cortex. Saat ini sistem AI saya sedang dalam mode demonstrasi karena 'Kunci API' belum dipasang oleh administrator. Meskipun begitu, Anda selalu dapat mengklik tombol 'Lewati & Chat WhatsApp Sekarang' di bawah untuk terhubung langsung dengan Tim Pengacara ahli kami!" 
       }), {
-        status: 500,
+        status: 200,
         headers: { 'Content-Type': 'application/json' }
       });
     }
