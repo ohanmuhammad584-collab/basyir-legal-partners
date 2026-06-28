@@ -43,9 +43,49 @@ const navItems = [
           {item.label}
         </a>
       ))}
-      <a href="/konsultasi" class="btn btn-primary btn-sm" style="margin-left: 0.5rem;" id="nav-cta-btn">
-        Konsultasi
+      <a href="/konsultasi" class="btn btn-primary btn-sm pulse-effect" style="margin-left: 0.5rem; position: relative; overflow: hidden;" id="nav-cta-btn">
+        <span style="position: relative; z-index: 1;">Hubungi Kami Langsung</span>
+        <div class="shine-effect"></div>
       </a>
     </nav>
   </div>
 </header>
+
+<style>
+  .pulse-effect {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    animation: pulse-red 2s infinite;
+  }
+  
+  @keyframes pulse-red {
+    0% {
+      transform: scale(0.98);
+      box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 8px rgba(220, 38, 38, 0);
+    }
+    100% {
+      transform: scale(0.98);
+      box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+    }
+  }
+
+  .shine-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+  }
+  
+  @keyframes shine {
+    0% { left: -100%; }
+    20% { left: 200%; }
+    100% { left: 200%; }
+  }
+</style>
